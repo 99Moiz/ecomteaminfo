@@ -8,7 +8,7 @@ const LEADERS = {
   talha: {
     name: 'Talha Mumtaz', initials: 'TM', photo: 'assets/ceo.jpg', color: '#6C5CFF',
     role: 'Chief Executive Officer', short: 'CEO', dept: 'Executive office', tier: 'ceo',
-    reportsTo: null, since: '2019', location: 'Head office', email: 'talha.mumtaz@example.com',
+    reportsTo: null, since: '2019', location: 'Head office', email: 'support@ecomdesignshub.com',
     quote: 'We grow when every team knows exactly why its work matters to the client.',
     bio: 'Talha leads Ecom Designs Hub’s strategy, client partnerships and long-term growth. He works side by side with founder Shaleem Samar and co-founder Uneeb Ahmed, keeping sales, production and delivery moving in one direction.',
     responsibilities: ['Company strategy and annual direction', 'Key client partnerships and new business', 'Leadership hiring and team structure', 'Budget, pricing and growth targets'],
@@ -19,7 +19,7 @@ const LEADERS = {
   uneeb: {
     name: 'Uneeb Ahmed', initials: 'UA', photo: 'assets/uneebCo-founder.png', cutout: true, color: '#1FA98F',
     role: 'Co-Founder · Chief Production Officer', short: 'Co-Founder · CPO', dept: 'Production', tier: 'founder',
-    reportsTo: 'talha', since: '2019', location: 'Head office', email: 'uneeb.ahmed@example.com',
+    reportsTo: 'talha', since: '2019', location: 'Head office', email: 'support@ecomdesignshub.com',
     quote: 'Great production is a calm team shipping work it is proud of.',
     bio: 'Uneeb oversees production across design, development and operations, turning every signed project into a finished store on schedule.',
     responsibilities: ['Production planning across all projects', 'Design and development quality reviews', 'Mentoring the team leads', 'Delivery timelines and capacity'],
@@ -29,7 +29,7 @@ const LEADERS = {
   shaleem: {
     name: 'Shaleem Samar', initials: 'SS', photo: 'assets/shaleem-portrait.jpg', color: '#E0622E',
     role: 'Founder · Chief Sales Officer', short: 'Founder · CSO', badge: 'Founder', dept: 'Sales', tier: 'founder',
-    reportsTo: 'talha', since: '2019', location: 'Head office', email: 'shaleem.samar@example.com',
+    reportsTo: 'talha', since: '2019', location: 'Head office', email: 'support@ecomdesignshub.com',
     quote: 'We sell outcomes, not hours — and then we deliver them.',
     bio: 'Shaleem leads sales and client acquisition, building the relationships that bring new brands to Ecom Designs Hub and keeping every proposal honest about what the team can deliver.',
     responsibilities: ['New business and sales pipeline', 'Proposals and pricing with the CEO', 'Client relationships and renewals', 'Sales reporting'],
@@ -39,7 +39,7 @@ const LEADERS = {
   hamza: {
     name: 'Ameer Hamza', initials: 'AH', photo: 'assets/Ameer Hamza.png', cutout: true, color: '#4152E0',
     role: 'Team Lead, Sales', short: 'Team Lead · Sales', dept: 'Sales', level: 'Team Lead', tier: 'team',
-    reportsTo: 'shaleem', since: '2022', location: 'Head office', email: 'hamza@example.com',
+    reportsTo: 'shaleem', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads the sales team',
     quote: 'Listen first — the right proposal is usually hiding in the client’s questions.',
     summary: 'Hamza leads the sales team day to day, from first call to signed proposal.',
@@ -51,7 +51,7 @@ const LEADERS = {
   farooq: {
     name: 'Muhammad Farooq', initials: 'FQ', photo: 'assets/farooq-TlandFloorManager.PNG', color: '#D2416F',
     role: 'Team Lead & Floor Manager', short: 'Team Lead · Floor Manager', dept: 'Sales', level: 'Team Lead', tier: 'team',
-    reportsTo: 'shaleem', since: '2021', location: 'Head office', email: 'farooq@example.com',
+    reportsTo: 'shaleem', since: '2021', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Runs the sales floor',
     quote: 'A focused floor closes more — clear targets, quick help, no one left guessing.',
     summary: 'Farooq runs the sales floor day to day, keeping the team focused, supported and on target.',
@@ -63,7 +63,7 @@ const LEADERS = {
   moiz: {
     name: 'Muhammad Moiz', initials: 'MM', photo: 'assets/MoizTL.jpg', color: '#2E8B6E',
     role: 'Senior Software Engineer', short: 'Team Lead · Development', dept: 'Development', level: 'Team Lead', tier: 'team',
-    reportsTo: 'talha', since: '2022', location: 'Head office', email: 'muhammad.moiz@example.com',
+    reportsTo: 'talha', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads the development team',
     quote: 'Build it to scale on day one — the second million users should feel like the first.',
     summary: 'Moiz leads development, building large-scale .NET applications that stay fast as they grow.',

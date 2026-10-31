@@ -484,6 +484,8 @@ body.loaded .portrait-img img { transform: scale(1); }
 .footer-word { display: block; font-family: var(--font-display); font-weight: 800; font-size: clamp(34px, 6.4vw, 96px); line-height: 1; letter-spacing: -.04em; color: transparent; -webkit-text-stroke: 1.5px rgba(255, 255, 255, .4); transition: color .6s var(--ease), -webkit-text-stroke-color .6s; }
 .footer-word:hover { color: var(--text); -webkit-text-stroke-color: var(--text); }
 .footer-row { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px; margin-top: 40px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .08); font-size: 13px; color: var(--faint); }
+.footer-row span a { color: var(--muted); text-decoration: underline; text-underline-offset: 3px; }
+.footer-row span a:hover { color: var(--text); }
 
 /* ---------- Drawer ---------- */
 .drawer { position: fixed; inset: 0; z-index: 120; visibility: hidden; transition: visibility 0s .8s; }
