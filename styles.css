@@ -291,7 +291,7 @@ body.loaded [data-hero] { opacity: 1; transform: none; }
 .ring-text text { fill: #fff; font-family: var(--font-body); font-size: 12.5px; font-weight: 600; letter-spacing: 3px; }
 .tilt-wrap { width: min(440px, 100%); transform-style: preserve-3d; transition: transform .6s var(--ease); will-change: transform; }
 .portrait-card { position: relative; display: block; width: 100%; padding: 14px; border-radius: 34px; transform-style: preserve-3d; }
-.portrait-img { display: block; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: #ececec; clip-path: inset(100% 0 0 0 round 24px); transition: clip-path 1.5s var(--ease-io) 1.3s; }
+.portrait-img { display: block; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: #fff; clip-path: inset(100% 0 0 0 round 24px); transition: clip-path 1.5s var(--ease-io) 1.3s; }
 body.loaded .portrait-img { clip-path: inset(0 0 0 0 round 24px); }
 .portrait-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; transform: scale(1.25); filter: grayscale(.6); transition: transform 1.8s var(--ease) 1.3s, filter .7s; }
 body.loaded .portrait-img img { transform: scale(1); }
@@ -381,7 +381,7 @@ body.loaded .portrait-img img { transform: scale(1); }
 
 /* ---------- CEO feature ---------- */
 .ceo { display: grid; grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr); gap: clamp(24px, 4vw, 56px); padding: 18px; border-radius: 38px; text-align: left; }
-.ceo .avatar { border-radius: 28px; aspect-ratio: 4 / 5; background: #ececec; clip-path: inset(0 0 100% 0 round 28px); transition: clip-path 1.4s var(--ease-io) .2s; }
+.ceo .avatar { border-radius: 28px; aspect-ratio: 4 / 5; background: #fff; clip-path: inset(0 0 100% 0 round 28px); transition: clip-path 1.4s var(--ease-io) .2s; }
 .is-in > .ceo .avatar { clip-path: inset(0 0 0 0 round 28px); }
 .ceo-body { display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: clamp(8px, 2vw, 28px) clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0; }
 .ceo-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 4.2vw, 58px); line-height: .98; letter-spacing: -.04em; }
@@ -400,7 +400,10 @@ body.loaded .portrait-img img { transform: scale(1); }
 @keyframes exec-swap { from { opacity: 0; transform: translateY(18px); } }
 .founders { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; margin-top: 24px; }
 .fcard { display: grid; grid-template-columns: minmax(150px, 210px) minmax(0, 1fr); gap: 22px; padding: 14px; text-align: left; }
-.fcard .avatar { border-radius: 22px; aspect-ratio: 4 / 5; }
+.fcard .avatar { border-radius: 22px; aspect-ratio: 4 / 5; background: #fff; }
+/* CEO and founders: whole photo on white, nothing cropped */
+.ceo .avatar img:not(.cutout), .fcard .avatar img:not(.cutout) { object-fit: contain; object-position: 50% 100%; }
+.ceo .avatar img.cutout, .fcard .avatar img.cutout { top: 40px; height: 118%; }
 .fcard .mono { font-size: clamp(44px, 4.4vw, 64px); }
 .fbody { display: flex; flex-direction: column; gap: 12px; padding: 10px 8px 8px 0; }
 .fbody h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(22px, 2vw, 28px); line-height: 1.1; letter-spacing: -.025em; }
@@ -422,6 +425,8 @@ body.loaded .portrait-img img { transform: scale(1); }
 .tcard .avatar { border-radius: 22px; aspect-ratio: 5 / 4; }
 /* landscape crop: anchor to the top so heads keep their headroom under the badge */
 .tcard .avatar img:not(.cutout) { object-position: 50% 0%; }
+/* Kashmala's photo is on white: match the card to it */
+.tcard .avatar:has(img[src*="kashmala"]) { background: #fff; }
 .tcard .mono { font-size: clamp(48px, 4.4vw, 66px); }
 .tbody { display: flex; flex-direction: column; gap: 10px; padding: 0 8px; }
 .tbody h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.025em; }
@@ -513,11 +518,12 @@ body.loaded .portrait-img img { transform: scale(1); }
 .drawer-body { padding: 14px; }
 .dz { opacity: 0; transform: translateY(26px); }
 .drawer.is-open .dz { animation: dz .8s var(--ease) both; animation-delay: calc(var(--i) * 70ms + .35s); }
-.d-hero { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 16 / 12; background: #161923; }
-.d-hero img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
+.d-hero { position: relative; border-radius: 24px; overflow: hidden; aspect-ratio: 16 / 12; background: #fff; }
+.d-hero img { width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; }
 /* full-body cut-out photos: frame head-to-waist and leave headroom for the badge */
 /* `translate` (not transform) centres it, so the hover scale on transform still works */
 .avatar img.cutout, .d-hero img.cutout { position: absolute; top: 56px; left: 50%; translate: -50% 0; width: auto; max-width: none; height: 165%; object-fit: initial; }
+.d-hero img.cutout { top: 40px; height: 118%; }
 .d-hero .mono { font-size: clamp(90px, 20vw, 160px); }
 .d-content { display: flex; flex-direction: column; gap: 22px; padding: 26px 14px 18px; }
 .d-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(30px, 4.6vw, 42px); line-height: 1; letter-spacing: -.035em; }

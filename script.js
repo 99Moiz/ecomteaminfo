@@ -13,8 +13,8 @@ const LEADERS = {
     bio: 'Talha leads Ecom Designs Hub’s strategy, client partnerships and long-term growth. He works side by side with founder Shaleem Samar and co-founder Uneeb Ahmed, keeping sales, production and delivery moving in one direction.',
     responsibilities: ['Company strategy and annual direction', 'Key client partnerships and new business', 'Leadership hiring and team structure', 'Budget, pricing and growth targets'],
     expertise: ['E-commerce strategy', 'Client partnerships', 'Business development', 'Team building', 'Pricing'],
-    meta: [['Leads', 'Strategy & growth'], ['Expertise', 'E-commerce, partnerships'], ['Direct reports', '2 founders, 1 team lead']],
-    worksWith: ['uneeb', 'shaleem', 'moiz']
+    meta: [['Leads', 'Strategy & growth'], ['Expertise', 'E-commerce, partnerships'], ['Direct reports', '2 founders, 2 leads']],
+    worksWith: ['uneeb', 'shaleem', 'moiz', 'kashmala']
   },
   uneeb: {
     name: 'Uneeb Ahmed', initials: 'UA', photo: 'assets/uneebCo-founder.png', cutout: true, color: '#1FA98F',
@@ -38,7 +38,7 @@ const LEADERS = {
   },
   hamza: {
     name: 'Ameer Hamza', initials: 'AH', photo: 'assets/Ameer Hamza.png', cutout: true, color: '#4152E0',
-    role: 'Team Lead, Sales', short: 'Team Lead · Sales', dept: 'Sales', level: 'Team Lead', tier: 'team',
+    role: 'Team Lead & Sales Director', short: 'Team Lead · Sales Director', dept: 'Sales', level: 'Team Lead', tier: 'team',
     reportsTo: 'shaleem', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads the sales team',
     quote: 'Listen first — the right proposal is usually hiding in the client’s questions.',
@@ -71,6 +71,18 @@ const LEADERS = {
     responsibilities: ['Leading the development team, planning and delivery', 'Architecture and design of large-scale .NET applications', 'High-performance APIs, services and integrations', 'Code reviews, engineering standards and mentoring', 'Performance tuning, scalability and reliability'],
     expertise: ['.NET / C#', 'ASP.NET Core', 'Large-scale systems', 'Microservices', 'SQL Server', 'Cloud & DevOps'],
     worksWith: ['talha']
+  },
+  kashmala: {
+    name: 'Kashmala', initials: 'KM', photo: 'assets/kashmala.jpeg', color: '#B5478F',
+    role: 'HR Manager & Marketing Head', short: 'HR Manager · Marketing Head', dept: 'HR & Marketing', level: 'Manager', tier: 'team',
+    reportsTo: 'talha', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
+    teamLine: 'Leads HR and marketing',
+    quote: 'Look after the people and tell their story well — the brand follows.',
+    summary: 'Kashmala manages HR and heads marketing, from hiring the team to growing the brand.',
+    bio: 'Kashmala is the HR manager and marketing head at Ecom Designs Hub. On the HR side, Kashmala runs hiring, onboarding, policies and team wellbeing; on the marketing side, Kashmala leads the brand, social media and campaigns that bring new clients to the company.',
+    responsibilities: ['Hiring, onboarding and HR policies', 'Attendance, performance reviews and team wellbeing', 'Brand, social media and content planning', 'Marketing campaigns and lead generation with sales'],
+    expertise: ['HR management', 'Recruitment', 'Marketing strategy', 'Social media', 'Branding'],
+    worksWith: ['talha', 'shaleem']
   }
 };
 
