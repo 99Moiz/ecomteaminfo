@@ -425,8 +425,11 @@ body.loaded .portrait-img img { transform: scale(1); }
 .tcard .avatar { border-radius: 22px; aspect-ratio: 5 / 4; }
 /* landscape crop: anchor to the top so heads keep their headroom under the badge */
 .tcard .avatar img:not(.cutout) { object-position: 50% 0%; }
-/* Kashmala's photo is on white: match the card to it */
-.tcard .avatar:has(img[src*="kashmala"]) { background: #fff; }
+/* Zainab (white-background photo) and Tasneem (transparent PNG): white card behind them */
+.tcard .avatar:has(img[src*="kashmala"], img[src*="MuhammadTasneem"]) { background: #fff; }
+.av img[src*="MuhammadTasneem"] { background: #fff; }
+/* Tasneem's photo is a tight headshot: show it smaller, sitting on the card bottom */
+.tcard .avatar img[src*="MuhammadTasneem"] { position: absolute; top: 12%; left: 50%; translate: -50% 0; width: auto; max-width: none; height: 100%; }
 .tcard .mono { font-size: clamp(48px, 4.4vw, 66px); }
 .tbody { display: flex; flex-direction: column; gap: 10px; padding: 0 8px; }
 .tbody h3 { font-family: var(--font-display); font-weight: 700; font-size: clamp(20px, 1.8vw, 24px); line-height: 1.1; letter-spacing: -.025em; }

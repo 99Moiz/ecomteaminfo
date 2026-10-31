@@ -8,13 +8,13 @@ const LEADERS = {
   talha: {
     name: 'Talha Mumtaz', initials: 'TM', photo: 'assets/ceo.jpg', color: '#6C5CFF',
     role: 'Chief Executive Officer', short: 'CEO', dept: 'Executive office', tier: 'ceo',
-    reportsTo: null, since: '2019', location: 'Head office', email: 'support@ecomdesignshub.com',
+    reportsTo: null, since: '2021', location: 'Head office', email: 'support@ecomdesignshub.com',
     quote: 'We grow when every team knows exactly why its work matters to the client.',
     bio: 'Talha leads Ecom Designs Hub’s strategy, client partnerships and long-term growth. He works side by side with founder Shaleem Samar and co-founder Uneeb Ahmed, keeping sales, production and delivery moving in one direction.',
     responsibilities: ['Company strategy and annual direction', 'Key client partnerships and new business', 'Leadership hiring and team structure', 'Budget, pricing and growth targets'],
     expertise: ['E-commerce strategy', 'Client partnerships', 'Business development', 'Team building', 'Pricing'],
     meta: [['Leads', 'Strategy & growth'], ['Expertise', 'E-commerce, partnerships'], ['Direct reports', '2 founders, 2 leads']],
-    worksWith: ['uneeb', 'shaleem', 'moiz', 'kashmala']
+    worksWith: ['uneeb', 'shaleem', 'moiz', 'zainab']
   },
   uneeb: {
     name: 'Uneeb Ahmed', initials: 'UA', photo: 'assets/uneebCo-founder.png', cutout: true, color: '#1FA98F',
@@ -24,7 +24,7 @@ const LEADERS = {
     bio: 'Uneeb oversees production across design, development and operations, turning every signed project into a finished store on schedule.',
     responsibilities: ['Production planning across all projects', 'Design and development quality reviews', 'Mentoring the team leads', 'Delivery timelines and capacity'],
     expertise: ['Production', 'Project delivery', 'Team leadership'],
-    worksWith: ['talha', 'moiz']
+    worksWith: ['talha', 'moiz', 'tasneem']
   },
   shaleem: {
     name: 'Shaleem Samar', initials: 'SS', photo: 'assets/shaleem-portrait.jpg', color: '#E0622E',
@@ -38,7 +38,7 @@ const LEADERS = {
   },
   hamza: {
     name: 'Ameer Hamza', initials: 'AH', photo: 'assets/Ameer Hamza.png', cutout: true, color: '#4152E0',
-    role: 'Team Lead & Sales Director', short: 'Team Lead · Sales Director', dept: 'Sales', level: 'Team Lead', tier: 'team',
+    role: 'Sales Director', short: 'Sales Director', dept: 'Sales', level: 'Director', tier: 'team',
     reportsTo: 'shaleem', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads the sales team',
     quote: 'Listen first — the right proposal is usually hiding in the client’s questions.',
@@ -50,12 +50,12 @@ const LEADERS = {
   },
   farooq: {
     name: 'Muhammad Farooq', initials: 'FQ', photo: 'assets/farooq-TlandFloorManager.PNG', color: '#D2416F',
-    role: 'Team Lead & Floor Manager', short: 'Team Lead · Floor Manager', dept: 'Sales', level: 'Team Lead', tier: 'team',
+    role: 'Floor Manager', short: 'Floor Manager', dept: 'Sales', level: 'Manager', tier: 'team',
     reportsTo: 'shaleem', since: '2021', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Runs the sales floor',
     quote: 'A focused floor closes more — clear targets, quick help, no one left guessing.',
     summary: 'Farooq runs the sales floor day to day, keeping the team focused, supported and on target.',
-    bio: 'Farooq is a team lead and the floor manager, running the sales floor day to day. Farooq sets the daily targets, keeps an eye on every live conversation, steps in to help the team close and makes sure the floor runs smoothly from the first shift to the last.',
+    bio: 'Farooq is the floor manager, running the sales floor day to day. Farooq sets the daily targets, keeps an eye on every live conversation, steps in to help the team close and makes sure the floor runs smoothly from the first shift to the last.',
     responsibilities: ['Running the sales floor and daily operations', 'Daily targets, shift planning and attendance', 'Coaching agents and quality checks on calls', 'Escalations and support on live deals', 'Floor reporting to the founders'],
     expertise: ['Floor management', 'Team coaching', 'Sales operations', 'Performance tracking', 'Client relations'],
     worksWith: ['shaleem', 'hamza', 'moiz']
@@ -72,14 +72,26 @@ const LEADERS = {
     expertise: ['.NET / C#', 'ASP.NET Core', 'Large-scale systems', 'Microservices', 'SQL Server', 'Cloud & DevOps'],
     worksWith: ['talha']
   },
-  kashmala: {
-    name: 'Kashmala', initials: 'KM', photo: 'assets/kashmala.jpeg', color: '#B5478F',
+  tasneem: {
+    name: 'Muhammad Tasneem', initials: 'MT', photo: 'assets/MuhammadTasneem.PNG', color: '#C08A1E',
+    role: 'Senior Visual Designer', short: 'Senior Visual Designer', dept: 'Design', level: 'Senior Designer', tier: 'team',
+    reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
+    teamLine: 'Shapes the visual design',
+    quote: 'Good design is the first promise a store makes to its customer.',
+    summary: 'Tasneem leads visual design, from brand look and feel to polished store layouts.',
+    bio: 'Tasneem is a senior visual designer at Ecom Designs Hub, working under co-founder Uneeb Ahmed in production. Tasneem shapes the look and feel of every client store, from brand identity and layouts to banners and product visuals, and keeps the design quality consistent across projects.',
+    responsibilities: ['Visual design for client stores and landing pages', 'Brand identity, banners and product visuals', 'Design reviews and visual quality across projects', 'Working with development on pixel-perfect delivery'],
+    expertise: ['Visual design', 'UI design', 'Branding', 'Figma', 'Adobe Photoshop', 'Illustrator'],
+    worksWith: ['uneeb', 'moiz']
+  },
+  zainab: {
+    name: 'Zainab Siddiqi', initials: 'ZS', photo: 'assets/kashmala.jpeg', color: '#B5478F',
     role: 'HR Manager & Marketing Head', short: 'HR Manager · Marketing Head', dept: 'HR & Marketing', level: 'Manager', tier: 'team',
     reportsTo: 'talha', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads HR and marketing',
     quote: 'Look after the people and tell their story well — the brand follows.',
-    summary: 'Kashmala manages HR and heads marketing, from hiring the team to growing the brand.',
-    bio: 'Kashmala is the HR manager and marketing head at Ecom Designs Hub. On the HR side, Kashmala runs hiring, onboarding, policies and team wellbeing; on the marketing side, Kashmala leads the brand, social media and campaigns that bring new clients to the company.',
+    summary: 'Zainab manages HR and heads marketing, from hiring the team to growing the brand.',
+    bio: 'Zainab is the HR manager and marketing head at Ecom Designs Hub. On the HR side, Zainab runs hiring, onboarding, policies and team wellbeing; on the marketing side, Zainab leads the brand, social media and campaigns that bring new clients to the company.',
     responsibilities: ['Hiring, onboarding and HR policies', 'Attendance, performance reviews and team wellbeing', 'Brand, social media and content planning', 'Marketing campaigns and lead generation with sales'],
     expertise: ['HR management', 'Recruitment', 'Marketing strategy', 'Social media', 'Branding'],
     worksWith: ['talha', 'shaleem']

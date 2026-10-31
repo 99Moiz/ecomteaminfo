@@ -51,10 +51,11 @@
       { "@type": "Person", "@id": "https://ecomdesignshub.info/#talha-mumtaz", "name": "Talha Mumtaz", "jobTitle": "Chief Executive Officer", "image": "https://ecomdesignshub.info/assets/ceo.jpg", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
       { "@type": "Person", "@id": "https://ecomdesignshub.info/#uneeb-ahmed", "name": "Uneeb Ahmed", "jobTitle": "Co-Founder & Chief Production Officer", "image": "https://ecomdesignshub.info/assets/uneebCo-founder.png", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
       { "@type": "Person", "@id": "https://ecomdesignshub.info/#shaleem-samar", "name": "Shaleem Samar", "jobTitle": "Founder & Chief Sales Officer", "image": "https://ecomdesignshub.info/assets/shaleem-portrait.jpg", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-farooq", "name": "Muhammad Farooq", "jobTitle": "Team Lead & Floor Manager", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#ameer-hamza", "name": "Ameer Hamza", "jobTitle": "Team Lead & Sales Director", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
+      { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-farooq", "name": "Muhammad Farooq", "jobTitle": "Floor Manager", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
+      { "@type": "Person", "@id": "https://ecomdesignshub.info/#ameer-hamza", "name": "Ameer Hamza", "jobTitle": "Sales Director", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
       { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-moiz", "name": "Muhammad Moiz", "jobTitle": "Team Lead, Development", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#kashmala", "name": "Kashmala", "jobTitle": "HR Manager & Marketing Head", "image": "https://ecomdesignshub.info/assets/kashmala.jpeg", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } }
+      { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-tasneem", "name": "Muhammad Tasneem", "jobTitle": "Senior Visual Designer", "image": "https://ecomdesignshub.info/assets/MuhammadTasneem.PNG", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
+      { "@type": "Person", "@id": "https://ecomdesignshub.info/#zainab-siddiqi", "name": "Zainab Siddiqi", "jobTitle": "HR Manager & Marketing Head", "image": "https://ecomdesignshub.info/assets/kashmala.jpeg", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } }
     ]
   }
   </script>
@@ -166,7 +167,7 @@
           <div class="hero-stats" data-hero style="--d:.74s">
             <div class="stat glass"><strong data-count="1" data-pad="2">00</strong><span>Chief Executive</span></div>
             <div class="stat glass"><strong data-count="2" data-pad="2">00</strong><span>Founders</span></div>
-            <div class="stat glass"><strong data-count="4" data-pad="2">00</strong><span>Team Leaders</span></div>
+            <div class="stat glass"><strong data-count="5" data-pad="2">00</strong><span>Core Team</span></div>
           </div>
         </div>
 
@@ -179,7 +180,7 @@
             <button type="button" class="portrait-card glass" data-open="talha" data-cursor="View" aria-label="Open profile of Talha Mumtaz, Chief Executive Officer">
               <span class="portrait-img"><img src="assets/ceo.jpg" alt="" width="1086" height="1448"></span>
               <span class="float-chip chip-name glass-dark"><strong>Talha Mumtaz</strong><small>Chief Executive Officer</small></span>
-              <span class="float-chip chip-since glass-dark"><span class="pulse"></span>Leading since 2019</span>
+              <span class="float-chip chip-since glass-dark"><span class="pulse"></span>Leading since 2021</span>
             </button>
           </div>
         </div>
@@ -216,13 +217,14 @@
             <span class="kicker" data-reveal>02 — Team Leadership</span>
             <h2 class="section-title" id="team-title" data-split>Those who <em>guide</em> the teams.</h2>
           </div>
-          <p class="section-lede" data-reveal style="--d:.15s">Four team leads and managers who turn direction into delivery, day to day.</p>
+          <p class="section-lede" data-reveal style="--d:.15s">The leads, managers and specialists who turn direction into delivery, day to day.</p>
         </header>
         <div class="tabs glass" role="group" aria-label="Filter by team" data-reveal>
           <span class="tab-indicator" aria-hidden="true"></span>
           <button type="button" class="tab is-active" data-filter="all" aria-pressed="true">All teams</button>
           <button type="button" class="tab" data-filter="Sales" aria-pressed="false">Sales</button>
           <button type="button" class="tab" data-filter="Development" aria-pressed="false">Development</button>
+          <button type="button" class="tab" data-filter="Design" aria-pressed="false">Design</button>
           <button type="button" class="tab" data-filter="HR &amp; Marketing" aria-pressed="false">HR &amp; Marketing</button>
         </div>
         <div class="team-grid" id="teamGrid"></div>
@@ -265,16 +267,19 @@
               <ul>
                 <li style="--lvl:1">
                   <button type="button" class="node" data-open="uneeb"><span class="av"><img src="assets/uneebCo-founder.png" alt="" class="cutout"></span><span class="nt"><strong>Uneeb Ahmed</strong><small>Co-Founder · CPO</small></span></button>
+                  <ul>
+                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="tasneem"><span class="av sq"><img src="assets/MuhammadTasneem.PNG" alt=""></span><span class="nt"><strong>Muhammad Tasneem</strong><small>Senior Visual Designer</small></span></button></li>
+                  </ul>
                 </li>
                 <li style="--lvl:1">
                   <button type="button" class="node" data-open="shaleem"><span class="av"><img src="assets/shaleem-portrait.jpg" alt=""></span><span class="nt"><strong>Shaleem Samar</strong><small>Founder · CSO</small></span></button>
                   <ul>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="farooq"><span class="av sq"><img src="assets/farooq-TlandFloorManager.PNG" alt=""></span><span class="nt"><strong>Farooq</strong><small>Team Lead · Floor Manager</small></span></button></li>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="hamza"><span class="av sq"><img src="assets/Ameer Hamza.png" alt="" class="cutout"></span><span class="nt"><strong>Ameer Hamza</strong><small>Team Lead · Sales Director</small></span></button></li>
+                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="farooq"><span class="av sq"><img src="assets/farooq-TlandFloorManager.PNG" alt=""></span><span class="nt"><strong>Farooq</strong><small>Floor Manager</small></span></button></li>
+                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="hamza"><span class="av sq"><img src="assets/Ameer Hamza.png" alt="" class="cutout"></span><span class="nt"><strong>Ameer Hamza</strong><small>Sales Director</small></span></button></li>
                   </ul>
                 </li>
                 <li style="--lvl:1"><button type="button" class="node node-team" data-open="moiz"><span class="av sq"><img src="assets/MoizTL.jpg" alt=""></span><span class="nt"><strong>Muhammad Moiz</strong><small>Team Lead · Development</small></span></button></li>
-                <li style="--lvl:1"><button type="button" class="node node-team" data-open="kashmala"><span class="av sq"><img src="assets/kashmala.jpeg" alt=""></span><span class="nt"><strong>Kashmala</strong><small>HR Manager · Marketing Head</small></span></button></li>
+                <li style="--lvl:1"><button type="button" class="node node-team" data-open="zainab"><span class="av sq"><img src="assets/kashmala.jpeg" alt=""></span><span class="nt"><strong>Zainab Siddiqi</strong><small>HR Manager · Marketing Head</small></span></button></li>
               </ul>
             </li>
           </ul>
