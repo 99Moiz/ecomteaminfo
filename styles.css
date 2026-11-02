@@ -384,7 +384,7 @@ body.loaded .portrait-img img { transform: scale(1); }
 .ceo .avatar { border-radius: 28px; aspect-ratio: 4 / 5; background: #fff; clip-path: inset(0 0 100% 0 round 28px); transition: clip-path 1.4s var(--ease-io) .2s; }
 .is-in > .ceo .avatar { clip-path: inset(0 0 0 0 round 28px); }
 .ceo-body { display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: clamp(8px, 2vw, 28px) clamp(8px, 2vw, 24px) clamp(8px, 2vw, 24px) 0; }
-.ceo-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 4.2vw, 58px); line-height: .98; letter-spacing: -.04em; }
+.ceo-name { font-family: var(--font-display); font-weight: 800; font-size: clamp(36px, 4.2vw, 58px); line-height: .98; letter-spacing: -.04em; white-space: nowrap; }
 .quote { font-family: var(--font-serif); font-style: italic; font-size: clamp(19px, 1.8vw, 24px); line-height: 1.4; color: #E8EAF0; }
 .ceo-bio { max-width: 540px; font-size: 16px; line-height: 1.75; color: var(--muted); }
 .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; }
@@ -617,6 +617,8 @@ body.loaded .portrait-img img { transform: scale(1); }
 
 @media (max-width: 600px) {
   :root { --gutter: 16px; }
+  /* keeps the one-line exec name inside the card on narrow phones */
+  .ceo-name { font-size: clamp(26px, 9vw, 36px); }
   .pl-meta, .pl-label { display: none; }
   .pl-foot { grid-template-columns: minmax(0, 1fr) auto; }
   .header { padding: 10px 12px; }

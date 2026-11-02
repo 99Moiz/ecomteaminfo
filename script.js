@@ -13,8 +13,8 @@ const LEADERS = {
     bio: 'Talha leads Ecom Designs Hub’s strategy, client partnerships and long-term growth. He works side by side with founder Shaleem Samar and co-founder Uneeb Ahmed, keeping sales, production and delivery moving in one direction.',
     responsibilities: ['Company strategy and annual direction', 'Key client partnerships and new business', 'Leadership hiring and team structure', 'Budget, pricing and growth targets'],
     expertise: ['E-commerce strategy', 'Client partnerships', 'Business development', 'Team building', 'Pricing'],
-    meta: [['Leads', 'Strategy & growth'], ['Expertise', 'E-commerce, partnerships'], ['Direct reports', '2 founders, 2 leads']],
-    worksWith: ['uneeb', 'shaleem', 'moiz', 'zainab']
+    meta: [['Leads', 'Strategy & growth'], ['Expertise', 'E-commerce, partnerships'], ['Direct reports', '2 founders']],
+    worksWith: ['uneeb', 'shaleem']
   },
   uneeb: {
     name: 'Uneeb Ahmed', initials: 'UA', photo: 'assets/uneebCo-founder.png', cutout: true, color: '#1FA98F',
@@ -24,7 +24,7 @@ const LEADERS = {
     bio: 'Uneeb oversees production across design, development and operations, turning every signed project into a finished store on schedule.',
     responsibilities: ['Production planning across all projects', 'Design and development quality reviews', 'Mentoring the team leads', 'Delivery timelines and capacity'],
     expertise: ['Production', 'Project delivery', 'Team leadership'],
-    worksWith: ['talha', 'moiz', 'tasneem']
+    worksWith: ['talha', 'tasneem', 'moiz', 'zainab']
   },
   shaleem: {
     name: 'Shaleem Samar', initials: 'SS', photo: 'assets/shaleem-portrait.jpg', color: '#E0622E',
@@ -63,14 +63,14 @@ const LEADERS = {
   moiz: {
     name: 'Muhammad Moiz', initials: 'MM', photo: 'assets/MoizTL.jpg', color: '#2E8B6E',
     role: 'Senior Software Engineer', short: 'Team Lead · Development', dept: 'Development', level: 'Team Lead', tier: 'team',
-    reportsTo: 'talha', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
+    reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads the development team',
     quote: 'Build it to scale on day one — the second million users should feel like the first.',
     summary: 'Moiz leads development, building large-scale .NET applications that stay fast as they grow.',
     bio: 'Moiz is a senior software engineer and leads the development team, specialising in .NET and large-scale applications. He designs and builds resilient back-end systems, APIs and distributed services that stay fast, secure and maintainable as traffic and data grow.',
     responsibilities: ['Leading the development team, planning and delivery', 'Architecture and design of large-scale .NET applications', 'High-performance APIs, services and integrations', 'Code reviews, engineering standards and mentoring', 'Performance tuning, scalability and reliability'],
     expertise: ['.NET / C#', 'ASP.NET Core', 'Large-scale systems', 'Microservices', 'SQL Server', 'Cloud & DevOps'],
-    worksWith: ['talha']
+    worksWith: ['uneeb', 'tasneem']
   },
   tasneem: {
     name: 'Muhammad Tasneem', initials: 'MT', photo: 'assets/MuhammadTasneem.PNG', color: '#C08A1E',
@@ -85,16 +85,16 @@ const LEADERS = {
     worksWith: ['uneeb', 'moiz']
   },
   zainab: {
-    name: 'Zainab Siddiqi', initials: 'ZS', photo: 'assets/kashmala.jpeg', color: '#B5478F',
+    name: 'Zainab Siddiqui', initials: 'ZS', photo: 'assets/kashmala.jpeg', color: '#B5478F',
     role: 'HR Manager & Marketing Head', short: 'HR Manager · Marketing Head', dept: 'HR & Marketing', level: 'Manager', tier: 'team',
-    reportsTo: 'talha', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
+    reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
     teamLine: 'Leads HR and marketing',
     quote: 'Look after the people and tell their story well — the brand follows.',
     summary: 'Zainab manages HR and heads marketing, from hiring the team to growing the brand.',
     bio: 'Zainab is the HR manager and marketing head at Ecom Designs Hub. On the HR side, Zainab runs hiring, onboarding, policies and team wellbeing; on the marketing side, Zainab leads the brand, social media and campaigns that bring new clients to the company.',
     responsibilities: ['Hiring, onboarding and HR policies', 'Attendance, performance reviews and team wellbeing', 'Brand, social media and content planning', 'Marketing campaigns and lead generation with sales'],
     expertise: ['HR management', 'Recruitment', 'Marketing strategy', 'Social media', 'Branding'],
-    worksWith: ['talha', 'shaleem']
+    worksWith: ['uneeb', 'shaleem']
   }
 };
 
@@ -136,14 +136,13 @@ const execMeta = (p) => p.meta || [['Leads', p.dept], ['Expertise', p.expertise.
 function renderCEO(revealed = false) {
   const id = featured;
   const p = LEADERS[id];
-  const [first, ...rest] = p.name.split(' ');
   $('#ceoFeature').innerHTML = `
     <div data-reveal${revealed ? ' class="is-in is-swapped"' : ''}>
       <article class="ceo card glass" data-open="${id}" data-cursor="Profile">
         <span class="avatar">${face(p, `Portrait of ${p.name}`)}</span>
         <div class="ceo-body">
           <span class="badge badge-accent"><span class="pulse"></span>${p.role}</span>
-          <h3 class="ceo-name">${first}<br>${rest.join(' ')}</h3>
+          <h3 class="ceo-name">${p.name}</h3>
           <p class="quote">“${p.quote}”</p>
           <p class="ceo-bio">${p.bio}</p>
           <div class="meta-grid">${execMeta(p).map(([k, v]) => `<div class="meta"><small>${k}</small><span>${v}</span></div>`).join('')}</div>
