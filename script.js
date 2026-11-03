@@ -201,7 +201,7 @@ function initPointerFx() {
   document.addEventListener('mouseover', (e) => {
     const labelled = e.target.closest('[data-cursor]');
     // the logo has its own hover, so the ring stays hidden there
-    const inner = e.target.closest('.brand') ? null : e.target.closest('a, button, .tab, .tag, .node');
+    const inner = e.target.closest('.brand') ? null : e.target.closest('a, button, .tab, .node');
     const showLabel = labelled && (!inner || inner === labelled || (inner.matches('.more') && labelled.contains(inner)));
     if (!ring.classList.contains('is-hover') && !ring.classList.contains('is-label')) {
       ringPos.x = pos.x; // appear at the pointer, not fly in from the last spot

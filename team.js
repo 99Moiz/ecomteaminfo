@@ -120,6 +120,8 @@
   const pad = (n, len) => String(n).padStart(len, '0');
   const arrow = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
   const altFor = (p) => `${p.name}, ${p.role.replace(' · ', ' – ')}`;
+  // every card has the same button text, so screen readers also hear whose profile it opens
+  const whose = (label, p) => `aria-label="${label} of ${p.name}"`;
 
   // sizes hints per slot, matching the CSS layout at each breakpoint
   const SIZES = {
@@ -172,7 +174,7 @@
           <p class="ceo-bio">${p.bio}</p>
           <div class="meta-grid">${execMeta(p).map(([k, v]) => `<div class="meta"><small>${k}</small><span>${v}</span></div>`).join('')}</div>
           <div class="card-actions">
-            <button type="button" class="btn btn-accent" data-open="${id}">Read full profile ${arrow}</button>
+            <button type="button" class="btn btn-accent" data-open="${id}" ${whose('Read full profile', p)}>Read full profile ${arrow}</button>
             ${linkedin(p)}
           </div>
         </div>
@@ -198,7 +200,7 @@
             <p>${p.bio}</p>
             ${tags(p.expertise)}
             <div class="card-actions">
-              <button type="button" class="more" data-open="${id}">View profile ${arrow}</button>
+              <button type="button" class="more" data-open="${id}" ${whose('View profile', p)}>View profile ${arrow}</button>
               ${linkedin(p)}
             </div>
           </div>
@@ -224,7 +226,7 @@
             <p>${p.summary || p.bio}</p>
             ${tags(p.expertise.slice(0, 3))}
             <div class="card-actions">
-              <button type="button" class="more" data-open="${id}">View profile ${arrow}</button>
+              <button type="button" class="more" data-open="${id}" ${whose('View profile', p)}>View profile ${arrow}</button>
               ${linkedin(p)}
             </div>
           </div>
