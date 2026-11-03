@@ -123,15 +123,22 @@ function countUp(el) {
 
 /* ---------- reveal on scroll ---------- */
 function initReveal() {
+  const els = $$('[data-reveal], [data-split], [data-count]');
+  const show = (el) => el.classList.add('is-in');
+  if (!('IntersectionObserver' in window)) { els.forEach(show); return; }
   const io = new IntersectionObserver((entries) => {
     entries.forEach((e) => {
       if (!e.isIntersecting) return;
-      e.target.classList.add('is-in');
+      show(e.target);
       if (e.target.dataset.count !== undefined) countUp(e.target);
       io.unobserve(e.target);
     });
-  }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-  $$('[data-reveal], [data-split], [data-count]').forEach((el) => io.observe(el));
+  }, { threshold: 0.01, rootMargin: '0px 0px -40px 0px' });
+  els.forEach((el) => {
+    // already scrolled past (deep link or restored scroll): show it without waiting for a scroll back up
+    if (el.getBoundingClientRect().bottom < 0) show(el);
+    else io.observe(el);
+  });
 }
 
 /* ---------- active nav link ---------- */
@@ -349,11 +356,17 @@ function openProfile(id) {
   drawer.setAttribute('aria-hidden', 'false');
   document.body.classList.add('is-locked');
   setInert(background(), true);
+  // shareable link: #profile-<id> opens this drawer straight away
+  history.replaceState(null, '', `#${PROFILE_HASH}${id}`);
   if (!wasOpen) setTimeout(() => $('.drawer-close').focus({ preventScroll: true }), 60);
 }
 
+const PROFILE_HASH = 'profile-';
+const profileFromHash = () => (location.hash.startsWith(`#${PROFILE_HASH}`) ? location.hash.slice(PROFILE_HASH.length + 1) : '');
+
 function closeProfile() {
   if (!drawer.classList.contains('is-open')) return;
+  if (profileFromHash()) history.replaceState(null, '', location.pathname + location.search);
   drawer.classList.remove('is-open');
   drawer.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('is-locked');
@@ -439,6 +452,7 @@ burger.addEventListener('click', () => setMenu(!menuOpen));
 $$('.mm-link, .mm-foot a').forEach((a) => a.addEventListener('click', () => closeMenu()));
 window.addEventListener('resize', () => { if (innerWidth > 960) closeMenu(); });
 window.addEventListener('scroll', onScroll, { passive: true });
+window.addEventListener('hashchange', () => { const id = profileFromHash(); if (id) openProfile(id); });
 
 initTabs();
 initPointerFx();
@@ -451,4 +465,5 @@ requestAnimationFrame(() => {
   initReveal();
   initActiveNav();
   onScroll();
+  if (profileFromHash()) openProfile(profileFromHash());
 });

@@ -15,7 +15,7 @@
     'muhammad-farooq': { w: 800, h: 968 },
     'muhammad-moiz': { w: 800, h: 1067 },
     'muhammad-tasneem': { w: 800, h: 1067 },
-    'kashmala': { w: 512, h: 575 }
+    'zainab-siddiqui': { w: 512, h: 575 }
   };
 
   // linkedin: '' hides the link. TODO: add each person's LinkedIn profile URL.
@@ -100,8 +100,7 @@
       worksWith: ['uneeb', 'moiz']
     },
     zainab: {
-      // TODO: confirm this is Zainab Siddiqui's photo — the file was supplied as "kashmala.jpeg"
-      name: 'Zainab Siddiqui', initials: 'ZS', photo: 'kashmala', color: '#B5478F', linkedin: '',
+      name: 'Zainab Siddiqui', initials: 'ZS', photo: 'zainab-siddiqui', color: '#B5478F', linkedin: '',
       role: 'HR Manager & Marketing Head', short: 'HR Manager · Marketing Head', dept: 'HR & Marketing', level: 'Manager', tier: 'team',
       reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
       teamLine: 'Leads HR and marketing',
@@ -212,7 +211,7 @@
     return Object.entries(LEADERS)
       .filter(([, p]) => p.tier === 'team')
       .map(([id, p], i) => `
-      <div class="team-item" data-dept="${p.dept}" data-reveal style="--d:${i * 0.1}s">
+      <div class="team-item" data-dept="${p.dept}" data-reveal style="--d:${(i * 0.08).toFixed(2)}s">
         <article class="tcard card glass" data-open="${id}" data-cursor="View">
           <span class="avatar">
             <span class="badge badge-float">${p.dept}</span>
