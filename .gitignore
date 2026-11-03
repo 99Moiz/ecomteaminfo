@@ -1,0 +1,3 @@
+# Build tools, original photos and their dependencies: used locally to regenerate
+# assets/ and index.html, not part of the deployed site
+tools/

@@ -1,10 +1,13 @@
 User-agent: *
 Allow: /
+Disallow: /tools/
 
-# Image search and result thumbnails: only the CEO photo and the logo
+# Image search and result thumbnails: only the CEO photo, the share banner and the logo
 User-agent: Googlebot-Image
 Disallow: /assets/
-Allow: /assets/ceo.jpg
+Disallow: /tools/
+Allow: /assets/team/talha-mumtaz-
+Allow: /assets/og-team.jpg
 Allow: /assets/logo.jpeg
 Allow: /assets/favicon-48.png
 Allow: /assets/favicon-192.png

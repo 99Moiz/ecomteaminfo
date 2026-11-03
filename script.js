@@ -1,232 +1,50 @@
 /* ==========================================================================
    Ecom Designs Hub — Leadership Circle
-   All people data lives in LEADERS below. Edit it to update the site.
-   Names and details are sample (dummy) data — replace with real information.
+   Behaviour only: every card, the org chart and the counts are already in
+   index.html (rendered from team.js by tools/render.mjs). This file adds
+   animation, filtering, the profile drawer, the menus and the sticky CTA.
    ========================================================================== */
 
-const LEADERS = {
-  talha: {
-    name: 'Talha Mumtaz', initials: 'TM', photo: 'assets/ceo.jpg', color: '#6C5CFF',
-    role: 'Chief Executive Officer', short: 'CEO', dept: 'Executive office', tier: 'ceo',
-    reportsTo: null, since: '2021', location: 'Head office', email: 'support@ecomdesignshub.com',
-    quote: 'We grow when every team knows exactly why its work matters to the client.',
-    bio: 'Talha leads Ecom Designs Hub’s strategy, client partnerships and long-term growth. He works side by side with founder Shaleem Samar and co-founder Uneeb Ahmed, keeping sales, production and delivery moving in one direction.',
-    responsibilities: ['Company strategy and annual direction', 'Key client partnerships and new business', 'Leadership hiring and team structure', 'Budget, pricing and growth targets'],
-    expertise: ['E-commerce strategy', 'Client partnerships', 'Business development', 'Team building', 'Pricing'],
-    meta: [['Leads', 'Strategy & growth'], ['Expertise', 'E-commerce, partnerships'], ['Direct reports', '2 founders']],
-    worksWith: ['uneeb', 'shaleem']
-  },
-  uneeb: {
-    name: 'Uneeb Ahmed', initials: 'UA', photo: 'assets/uneebCo-founder.png', cutout: true, color: '#1FA98F',
-    role: 'Co-Founder · Chief Production Officer', short: 'Co-Founder · CPO', dept: 'Production', tier: 'founder',
-    reportsTo: 'talha', since: '2019', location: 'Head office', email: 'support@ecomdesignshub.com',
-    quote: 'Great production is a calm team shipping work it is proud of.',
-    bio: 'Uneeb oversees production across design, development and operations, turning every signed project into a finished store on schedule.',
-    responsibilities: ['Production planning across all projects', 'Design and development quality reviews', 'Mentoring the team leads', 'Delivery timelines and capacity'],
-    expertise: ['Production', 'Project delivery', 'Team leadership'],
-    worksWith: ['talha', 'tasneem', 'moiz', 'zainab']
-  },
-  shaleem: {
-    name: 'Shaleem Samar', initials: 'SS', photo: 'assets/shaleem-portrait.jpg', color: '#E0622E',
-    role: 'Founder · Chief Sales Officer', short: 'Founder · CSO', badge: 'Founder', dept: 'Sales', tier: 'founder',
-    reportsTo: 'talha', since: '2019', location: 'Head office', email: 'support@ecomdesignshub.com',
-    quote: 'We sell outcomes, not hours — and then we deliver them.',
-    bio: 'Shaleem leads sales and client acquisition, building the relationships that bring new brands to Ecom Designs Hub and keeping every proposal honest about what the team can deliver.',
-    responsibilities: ['New business and sales pipeline', 'Proposals and pricing with the CEO', 'Client relationships and renewals', 'Sales reporting'],
-    expertise: ['Sales', 'Negotiation', 'Client relations'],
-    worksWith: ['talha', 'uneeb', 'farooq', 'hamza']
-  },
-  hamza: {
-    name: 'Ameer Hamza', initials: 'AH', photo: 'assets/Ameer Hamza.png', cutout: true, color: '#4152E0',
-    role: 'Sales Director', short: 'Sales Director', dept: 'Sales', level: 'Director', tier: 'team',
-    reportsTo: 'shaleem', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
-    teamLine: 'Leads the sales team',
-    quote: 'Listen first — the right proposal is usually hiding in the client’s questions.',
-    summary: 'Hamza leads the sales team day to day, from first call to signed proposal.',
-    bio: 'Hamza leads the sales team day to day, coaching the team on discovery calls, lead qualification and proposals. Hamza works closely with the Floor Manager and founders to keep the pipeline moving and make sure every new client is handed over to production with clear expectations.',
-    responsibilities: ['Daily sales team planning and follow-ups', 'Lead qualification and discovery calls', 'Proposals and client onboarding', 'Pipeline tracking and sales reporting'],
-    expertise: ['Sales', 'Lead generation', 'Client communication', 'Proposals'],
-    worksWith: ['shaleem', 'farooq']
-  },
-  farooq: {
-    name: 'Muhammad Farooq', initials: 'FQ', photo: 'assets/farooq-TlandFloorManager.PNG', color: '#D2416F',
-    role: 'Floor Manager', short: 'Floor Manager', dept: 'Sales', level: 'Manager', tier: 'team',
-    reportsTo: 'shaleem', since: '2021', location: 'Head office', email: 'support@ecomdesignshub.com',
-    teamLine: 'Runs the sales floor',
-    quote: 'A focused floor closes more — clear targets, quick help, no one left guessing.',
-    summary: 'Farooq runs the sales floor day to day, keeping the team focused, supported and on target.',
-    bio: 'Farooq is the floor manager, running the sales floor day to day. Farooq sets the daily targets, keeps an eye on every live conversation, steps in to help the team close and makes sure the floor runs smoothly from the first shift to the last.',
-    responsibilities: ['Running the sales floor and daily operations', 'Daily targets, shift planning and attendance', 'Coaching agents and quality checks on calls', 'Escalations and support on live deals', 'Floor reporting to the founders'],
-    expertise: ['Floor management', 'Team coaching', 'Sales operations', 'Performance tracking', 'Client relations'],
-    worksWith: ['shaleem', 'hamza', 'moiz']
-  },
-  moiz: {
-    name: 'Muhammad Moiz', initials: 'MM', photo: 'assets/MoizTL.jpg', color: '#2E8B6E',
-    role: 'Senior Software Engineer', short: 'Team Lead · Development', dept: 'Development', level: 'Team Lead', tier: 'team',
-    reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
-    teamLine: 'Leads the development team',
-    quote: 'Build it to scale on day one — the second million users should feel like the first.',
-    summary: 'Moiz leads development, building large-scale .NET applications that stay fast as they grow.',
-    bio: 'Moiz is a senior software engineer and leads the development team, specialising in .NET and large-scale applications. He designs and builds resilient back-end systems, APIs and distributed services that stay fast, secure and maintainable as traffic and data grow.',
-    responsibilities: ['Leading the development team, planning and delivery', 'Architecture and design of large-scale .NET applications', 'High-performance APIs, services and integrations', 'Code reviews, engineering standards and mentoring', 'Performance tuning, scalability and reliability'],
-    expertise: ['.NET / C#', 'ASP.NET Core', 'Large-scale systems', 'Microservices', 'SQL Server', 'Cloud & DevOps'],
-    worksWith: ['uneeb', 'tasneem']
-  },
-  tasneem: {
-    name: 'Muhammad Tasneem', initials: 'MT', photo: 'assets/MuhammadTasneem.PNG', color: '#C08A1E',
-    role: 'Senior Visual Designer', short: 'Senior Visual Designer', dept: 'Design', level: 'Senior Designer', tier: 'team',
-    reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
-    teamLine: 'Shapes the visual design',
-    quote: 'Good design is the first promise a store makes to its customer.',
-    summary: 'Tasneem leads visual design, from brand look and feel to polished store layouts.',
-    bio: 'Tasneem is a senior visual designer at Ecom Designs Hub, working under co-founder Uneeb Ahmed in production. Tasneem shapes the look and feel of every client store, from brand identity and layouts to banners and product visuals, and keeps the design quality consistent across projects.',
-    responsibilities: ['Visual design for client stores and landing pages', 'Brand identity, banners and product visuals', 'Design reviews and visual quality across projects', 'Working with development on pixel-perfect delivery'],
-    expertise: ['Visual design', 'UI design', 'Branding', 'Figma', 'Adobe Photoshop', 'Illustrator'],
-    worksWith: ['uneeb', 'moiz']
-  },
-  zainab: {
-    name: 'Zainab Siddiqui', initials: 'ZS', photo: 'assets/kashmala.jpeg', color: '#B5478F',
-    role: 'HR Manager & Marketing Head', short: 'HR Manager · Marketing Head', dept: 'HR & Marketing', level: 'Manager', tier: 'team',
-    reportsTo: 'uneeb', since: '2022', location: 'Head office', email: 'support@ecomdesignshub.com',
-    teamLine: 'Leads HR and marketing',
-    quote: 'Look after the people and tell their story well — the brand follows.',
-    summary: 'Zainab manages HR and heads marketing, from hiring the team to growing the brand.',
-    bio: 'Zainab is the HR manager and marketing head at Ecom Designs Hub. On the HR side, Zainab runs hiring, onboarding, policies and team wellbeing; on the marketing side, Zainab leads the brand, social media and campaigns that bring new clients to the company.',
-    responsibilities: ['Hiring, onboarding and HR policies', 'Attendance, performance reviews and team wellbeing', 'Brand, social media and content planning', 'Marketing campaigns and lead generation with sales'],
-    expertise: ['HR management', 'Recruitment', 'Marketing strategy', 'Social media', 'Branding'],
-    worksWith: ['uneeb', 'shaleem']
-  }
-};
-
-const VALUES = ['Ownership', 'Craft first', 'Open doors', 'Grow people', 'Decide in the open'];
-
-/* ---------- always start at the top on reload ---------- */
-if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-if (location.hash) history.replaceState(null, '', location.pathname + location.search);
-window.scrollTo(0, 0);
-window.addEventListener('beforeunload', () => window.scrollTo(0, 0));
+const { LEADERS, pad, arrow, face, smallFace, tags, linkedin, execCard, founderCards } = window.TEAM;
 
 /* ---------- helpers ---------- */
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 const finePointer = window.matchMedia('(pointer: fine)').matches;
-const pad = (n, len) => String(n).padStart(len, '0');
+// everything behind an open drawer or menu, made inert so focus and screen readers stay inside
+const background = () => [$('#header'), $('main'), $('.footer'), $('#mobileCta')].filter(Boolean);
+const setInert = (els, on) => els.forEach((el) => { el.inert = on; });
 
-const arrow = '<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>';
-
-function face(p, alt = '') {
-  return p.photo
-    ? `<img src="${p.photo}" alt="${alt}" loading="lazy"${p.cutout ? ' class="cutout"' : ''}>`
-    : `<span class="mono" style="background:${p.color}">${p.initials}</span>`;
-}
-function smallFace(p) {
-  return p.photo
-    ? `<span class="av"><img src="${p.photo}" alt=""${p.cutout ? ' class="cutout"' : ''}></span>`
-    : `<span class="av" style="background:${p.color}">${p.initials}</span>`;
-}
-const tags = (list) => `<div class="tags">${list.map((t) => `<span class="tag">${t}</span>`).join('')}</div>`;
-
-/* ---------- render ---------- */
+/* ---------- executive swap ---------- */
 // the big executive card shows the CEO by default; clicking a founder card swaps them in
 let featured = 'talha';
-const execBadge = (p) => p.badge || (p.tier === 'ceo' ? 'Chief Executive' : 'Co-Founder');
-const execMeta = (p) => p.meta || [['Leads', p.dept], ['Expertise', p.expertise.slice(0, 2).join(', ')], ['With us since', p.since]];
-
-function renderCEO(revealed = false) {
-  const id = featured;
-  const p = LEADERS[id];
-  $('#ceoFeature').innerHTML = `
-    <div data-reveal${revealed ? ' class="is-in is-swapped"' : ''}>
-      <article class="ceo card glass" data-open="${id}" data-cursor="Profile">
-        <span class="avatar">${face(p, `Portrait of ${p.name}`)}</span>
-        <div class="ceo-body">
-          <span class="badge badge-accent"><span class="pulse"></span>${p.role}</span>
-          <h3 class="ceo-name">${p.name}</h3>
-          <p class="quote">“${p.quote}”</p>
-          <p class="ceo-bio">${p.bio}</p>
-          <div class="meta-grid">${execMeta(p).map(([k, v]) => `<div class="meta"><small>${k}</small><span>${v}</span></div>`).join('')}</div>
-          <button type="button" class="btn btn-accent" data-open="${id}">Read full profile ${arrow}</button>
-        </div>
-      </article>
-    </div>`;
-}
-
-function renderFounders(revealed = false) {
-  $('#founders').innerHTML = Object.entries(LEADERS)
-    .filter(([id, p]) => (p.tier === 'founder' || p.tier === 'ceo') && id !== featured)
-    .map(([id, p], i) => `
-      <div data-reveal${revealed ? ' class="is-in is-swapped"' : ''} style="--d:${i * 0.12}s">
-        <article class="fcard card glass" data-feature="${id}" data-cursor="View">
-          <span class="avatar">
-            <span class="badge badge-float">${execBadge(p)}</span>
-            ${face(p)}
-            <span class="slide-up glass-dark"><span>“${p.quote}”</span></span>
-          </span>
-          <div class="fbody">
-            <h3>${p.name}</h3>
-            <span class="role">${p.role}</span>
-            <p>${p.bio}</p>
-            ${tags(p.expertise)}
-            <button type="button" class="more" data-open="${id}">View profile ${arrow}</button>
-          </div>
-        </article>
-      </div>`).join('');
-}
 
 function featureExec(id) {
   if (id === featured || !LEADERS[id]) return;
   featured = id;
-  renderCEO(true);
-  renderFounders(true);
+  $('#ceoFeature').innerHTML = execCard(id, true);
+  $('#founders').innerHTML = founderCards(id, true);
   $('#ceoFeature').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
-}
-
-function renderTeam() {
-  $('#teamGrid').innerHTML = Object.entries(LEADERS)
-    .filter(([, p]) => p.tier === 'team')
-    .map(([id, p], i) => `
-      <div class="team-item" data-dept="${p.dept}" data-reveal style="--d:${i * 0.1}s">
-        <article class="tcard card glass" data-open="${id}" data-cursor="View">
-          <span class="avatar">
-            <span class="badge badge-float">${p.dept}</span>
-            ${face(p)}
-            <span class="slide-up glass-dark"><span>${p.teamLine}</span><b>Profile →</b></span>
-          </span>
-          <div class="tbody">
-            <span class="badge ${p.level === 'Manager' ? 'badge-orange' : 'badge-teal'}">${p.level}</span>
-            <h3>${p.name}</h3>
-            <span class="role-plain">${p.role}</span>
-            <p>${p.summary || p.bio}</p>
-            ${tags(p.expertise.slice(0, 3))}
-            <button type="button" class="more" data-open="${id}">View profile ${arrow}</button>
-          </div>
-        </article>
-      </div>`).join('');
-}
-
-function renderMarquee() {
-  const stars = ['#6C5CFF', '#FF7A3D', '#22C7A9', '#E2487F'];
-  const star = (i) => `<span class="mq-star" style="color:${stars[i % stars.length]}">✦</span>`;
-  const names = Object.entries(LEADERS).map(([id, p], i) => `
-    <span class="mq-item mq-person" data-open="${id}">${smallFace(p)}<span class="mq-name"><b>${p.name}</b><small>${p.short}</small></span></span>${star(i)}`).join('');
-  const values = VALUES.map((t, i) => `<span class="mq-item">${t}</span>${star(i + 1)}`).join('');
-  // two identical groups so the loop can wrap seamlessly at one group's width
-  const group = (html) => `<div class="mq-group">${html}</div><div class="mq-group">${html}</div>`;
-  // each group repeats its items so one group is always wider than the screen
-  $('#mqNames').innerHTML = group(names + names);
-  $('#mqValues').innerHTML = group(values + values);
 }
 
 /* ---------- marquee motion: drifts on its own, speeds up and follows scroll direction ---------- */
 function initMarquee() {
   if (reduceMotion) return;
   const rows = [
-    { el: $('#mqNames'), speed: 55, x: 0 },
-    { el: $('#mqValues'), speed: -45, x: 0 }
+    { el: $('#mqNames'), speed: 55, x: 0, w: 0 },
+    { el: $('#mqValues'), speed: -45, x: 0, w: 0 }
   ];
+  // group widths are measured once (and on resize), not every frame, to avoid forced layouts
+  const measure = () => rows.forEach((r) => { r.w = r.el.firstElementChild.offsetWidth; });
+  measure();
+  window.addEventListener('resize', measure);
+  if (document.fonts) document.fonts.ready.then(measure);
   const band = $('.marquee');
   let dir = 1, boost = 0, hover = 1, hoverTarget = 1, prevY = window.scrollY, last = performance.now();
+  let visible = false;
+  // only animate while the band is on screen
+  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(band);
   band.addEventListener('pointerenter', () => { hoverTarget = 0.18; });
   band.addEventListener('pointerleave', () => { hoverTarget = 1; });
   window.addEventListener('scroll', () => {
@@ -239,15 +57,17 @@ function initMarquee() {
   const frame = (now) => {
     const dt = Math.min((now - last) / 1000, 0.05);
     last = now;
-    boost *= 0.92;
-    hover += (hoverTarget - hover) * 0.08;
-    rows.forEach((r) => {
-      const w = r.el.firstElementChild.offsetWidth;
-      if (!w) return;
-      r.x -= r.speed * dir * (1 + boost) * hover * dt;
-      r.x = ((r.x % w) - w) % w; // keep within (-w, 0]
-      r.el.style.transform = `translate3d(${r.x}px,0,0) skewX(${(-dir * boost * 0.6 * Math.sign(r.speed)).toFixed(2)}deg)`;
-    });
+    if (visible) {
+      boost *= 0.92;
+      hover += (hoverTarget - hover) * 0.08;
+      rows.forEach((r) => {
+        const { w } = r;
+        if (!w) return;
+        r.x -= r.speed * dir * (1 + boost) * hover * dt;
+        r.x = ((r.x % w) - w) % w; // keep within (-w, 0]
+        r.el.style.transform = `translate3d(${r.x}px,0,0) skewX(${(-dir * boost * 0.6 * Math.sign(r.speed)).toFixed(2)}deg)`;
+      });
+    }
     requestAnimationFrame(frame);
   };
   requestAnimationFrame(frame);
@@ -281,15 +101,17 @@ function splitText(el) {
   });
   el.textContent = '';
   el.append(frag);
+  el.classList.add('is-split');
 }
 
 /* ---------- counters ---------- */
+// the real number is already in the markup; this only replays it as a count-up
 function countUp(el) {
   const target = Number(el.dataset.count);
   const len = Number(el.dataset.pad || 0);
-  if (reduceMotion) { el.textContent = pad(target, len); return; }
+  if (reduceMotion) return;
   const start = performance.now();
-  const dur = 1400;
+  const dur = 1200;
   const tick = (now) => {
     const t = Math.min((now - start) / dur, 1);
     const eased = 1 - Math.pow(2, -10 * t);
@@ -309,7 +131,7 @@ function initReveal() {
       io.unobserve(e.target);
     });
   }, { threshold: 0.15, rootMargin: '0px 0px -6% 0px' });
-  $$('[data-reveal], [data-split]:not([data-hero-split]), [data-count]').forEach((el) => io.observe(el));
+  $$('[data-reveal], [data-split], [data-count]').forEach((el) => io.observe(el));
 }
 
 /* ---------- active nav link ---------- */
@@ -425,22 +247,30 @@ function initPointerFx() {
   });
 }
 
-/* ---------- team filter ---------- */
+/* ---------- team filter: shows/hides the cards already in the page ---------- */
 function initTabs() {
+  const bar = $('.tabs');
   const tabs = $$('.tab');
   const indicator = $('.tab-indicator');
+  const status = $('#filterStatus');
   const place = (btn) => {
     indicator.style.width = `${btn.offsetWidth}px`;
     indicator.style.height = `${btn.offsetHeight}px`;
     indicator.style.transform = `translate(${btn.offsetLeft}px, ${btn.offsetTop}px)`;
   };
   const active = () => $('.tab.is-active');
+  // edge fades only while there is more to scroll in that direction
+  const edges = () => {
+    bar.classList.toggle('more-left', bar.scrollLeft > 8);
+    bar.classList.toggle('more-right', bar.scrollLeft + bar.clientWidth < bar.scrollWidth - 8);
+  };
   tabs.forEach((btn) => btn.addEventListener('click', () => {
     tabs.forEach((t) => {
       t.classList.toggle('is-active', t === btn);
       t.setAttribute('aria-pressed', String(t === btn));
     });
     place(btn);
+    btn.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'nearest', inline: 'nearest' });
     const f = btn.dataset.filter;
     let i = 0;
     $$('.team-item').forEach((item) => {
@@ -448,15 +278,19 @@ function initTabs() {
       item.classList.toggle('is-hidden', !show);
       item.classList.remove('pop');
       if (show) {
+        item.classList.add('is-in'); // a filtered-in card may not have been revealed yet
         void item.offsetWidth; // restart animation
         item.style.setProperty('--i', i++);
         item.classList.add('pop');
       }
     });
+    status.textContent = `${i} ${i === 1 ? 'person' : 'people'} shown`;
   }));
+  bar.addEventListener('scroll', edges, { passive: true });
   place(active());
-  window.addEventListener('resize', () => place(active()));
-  if (document.fonts) document.fonts.ready.then(() => place(active()));
+  edges();
+  window.addEventListener('resize', () => { place(active()); edges(); });
+  if (document.fonts) document.fonts.ready.then(() => { place(active()); edges(); });
 }
 
 /* ---------- profile drawer ---------- */
@@ -467,18 +301,17 @@ let lastFocus = null;
 
 function profileHTML(id) {
   const p = LEADERS[id];
-  const [first, ...rest] = p.name.split(' ');
   const boss = p.reportsTo ? LEADERS[p.reportsTo].name : 'Founding team';
   let i = 0;
   const z = () => `class="dz" style="--i:${i++}"`;
   return `
     <div class="d-hero dz" style="--i:${i++}">
-      ${face(p, `Portrait of ${p.name}`)}
+      ${face(p, 'drawer')}
       <span class="badge badge-float">${p.dept}</span>
     </div>
     <div class="d-content">
       <span class="badge badge-accent dz" style="--i:${i++}">${p.role}</span>
-      <h2 class="d-name dz" id="dName" style="--i:${i++}">${first}<br>${rest.join(' ')}</h2>
+      <h2 class="d-name dz" id="dName" style="--i:${i++}">${p.name}</h2>
       <p class="quote dz" style="--i:${i++}">“${p.quote}”</p>
       <div class="d-facts dz" style="--i:${i++}">
         <div class="meta"><small>Department</small><span>${p.dept}</span></div>
@@ -486,12 +319,12 @@ function profileHTML(id) {
         <div class="meta"><small>Location</small><span>${p.location}</span></div>
         <div class="meta"><small>With us since</small><span>${p.since}</span></div>
       </div>
-      <div class="d-section" ${z()}><h4>Biography</h4><p>${p.bio}</p></div>
-      <div class="d-section" ${z()}><h4>Responsibilities</h4>
+      <div class="d-section" ${z()}><h3>Biography</h3><p>${p.bio}</p></div>
+      <div class="d-section" ${z()}><h3>Responsibilities</h3>
         <ol class="d-list">${p.responsibilities.map((r, n) => `<li><b>${pad(n + 1, 2)}</b><span>${r}</span></li>`).join('')}</ol>
       </div>
-      <div class="d-section" ${z()}><h4>Expertise</h4>${tags(p.expertise)}</div>
-      <div class="d-section" ${z()}><h4>Works closest with</h4>
+      <div class="d-section" ${z()}><h3>Expertise</h3>${tags(p.expertise)}</div>
+      <div class="d-section" ${z()}><h3>Works closest with</h3>
         <div class="d-people">${p.worksWith.map((wid) => {
           const w = LEADERS[wid];
           return `<button type="button" class="d-person" data-open="${wid}">${smallFace(w)}<span><strong>${w.name}</strong><small>${w.short}</small></span></button>`;
@@ -499,6 +332,7 @@ function profileHTML(id) {
       </div>
       <div class="d-actions" ${z()}>
         <a class="btn btn-light" href="mailto:${p.email}">Send an email ${arrow}</a>
+        ${linkedin(p)}
         <button type="button" class="btn btn-ghost" data-close>Close</button>
       </div>
     </div>`;
@@ -514,6 +348,7 @@ function openProfile(id) {
   drawer.classList.add('is-open');
   drawer.setAttribute('aria-hidden', 'false');
   document.body.classList.add('is-locked');
+  setInert(background(), true);
   if (!wasOpen) setTimeout(() => $('.drawer-close').focus({ preventScroll: true }), 60);
 }
 
@@ -522,6 +357,7 @@ function closeProfile() {
   drawer.classList.remove('is-open');
   drawer.setAttribute('aria-hidden', 'true');
   document.body.classList.remove('is-locked');
+  setInert(background(), false);
   if (lastFocus) lastFocus.focus({ preventScroll: true });
 }
 
@@ -545,67 +381,42 @@ function setMenu(open) {
   burger.setAttribute('aria-expanded', String(open));
   burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
   document.body.classList.toggle('is-locked', open);
-  if (open) header.classList.remove('is-hidden');
+  // keep the header (with the close button) usable; everything else goes inert
+  setInert([$('main'), $('.footer'), $('#mobileCta')], open);
+  if (open) {
+    header.classList.remove('is-hidden');
+    setTimeout(() => $('.mm-link').focus({ preventScroll: true }), 80);
+  }
 }
-function closeMenu() { if (menuOpen) setMenu(false); }
-
-/* ---------- preloader ---------- */
-// wraps every letter of the wordmark so it can rise in and out
-function splitChars(root) {
-  let i = 0;
-  const walk = (node) => {
-    [...node.childNodes].forEach((n) => {
-      if (n.nodeType !== Node.TEXT_NODE) { walk(n); return; }
-      const frag = document.createDocumentFragment();
-      [...n.textContent].forEach((ch) => {
-        if (ch === ' ') { frag.append(' '); return; }
-        const outer = document.createElement('span');
-        const inner = document.createElement('span');
-        outer.className = 'c';
-        inner.className = 'ci';
-        inner.style.setProperty('--i', i++);
-        inner.textContent = ch;
-        outer.append(inner);
-        frag.append(outer);
-      });
-      n.replaceWith(frag);
-    });
-  };
-  walk(root);
-  root.setAttribute('aria-label', 'Ecom Designs Hub');
-  root.classList.add('is-split');
+function closeMenu(returnFocus = false) {
+  if (!menuOpen) return;
+  setMenu(false);
+  if (returnFocus) burger.focus({ preventScroll: true });
 }
 
-function runPreloader() {
-  splitChars($('#plWord'));
-  return new Promise((resolve) => {
-    const countEl = $('#plCount');
-    const bar = $('#plBar');
-    const dur = reduceMotion ? 200 : 2300;
-    const start = performance.now();
-    const tick = (now) => {
-      const t = Math.min((now - start) / dur, 1);
-      const eased = 1 - Math.pow(1 - t, 3);
-      countEl.textContent = Math.round(eased * 100);
-      bar.style.transform = `scaleX(${eased})`;
-      if (t < 1) requestAnimationFrame(tick);
-      else resolve();
-    };
-    requestAnimationFrame(tick);
+/* ---------- sticky call to action (phones) ---------- */
+function initMobileCta() {
+  const bar = $('#mobileCta');
+  let dismissed = false;
+  try { dismissed = sessionStorage.getItem('ctaHidden') === '1'; } catch (e) { /* storage blocked */ }
+  if (dismissed) return;
+  const seen = { hero: true, contact: false };
+  const update = () => bar.classList.toggle('is-on', !seen.hero && !seen.contact);
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e) => { seen[e.target.id === 'contact' ? 'contact' : 'hero'] = e.isIntersecting; });
+    update();
+  });
+  io.observe($('#top'));
+  io.observe($('#contact'));
+  $('#mobileCtaClose').addEventListener('click', () => {
+    bar.classList.remove('is-on');
+    io.disconnect();
+    try { sessionStorage.setItem('ctaHidden', '1'); } catch (e) { /* storage blocked */ }
   });
 }
 
-const pageLoaded = new Promise((resolve) => {
-  if (document.readyState === 'complete') resolve();
-  else window.addEventListener('load', resolve, { once: true });
-  setTimeout(resolve, 4000); // never wait forever
-});
-
 /* ---------- boot ---------- */
-renderCEO();
-renderFounders();
-renderTeam();
-renderMarquee();
+if ('scrollRestoration' in history && !location.hash) history.scrollRestoration = 'manual';
 $$('[data-split]').forEach(splitText);
 $('#year').textContent = new Date().getFullYear();
 
@@ -620,24 +431,23 @@ document.addEventListener('click', (e) => {
   }
 });
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { closeProfile(); closeMenu(); }
+  if (e.key === 'Escape') { closeProfile(); closeMenu(true); }
   trapFocus(e);
 });
 
 burger.addEventListener('click', () => setMenu(!menuOpen));
-$$('.mm-link').forEach((a) => a.addEventListener('click', closeMenu));
+$$('.mm-link, .mm-foot a').forEach((a) => a.addEventListener('click', () => closeMenu()));
 window.addEventListener('resize', () => { if (innerWidth > 960) closeMenu(); });
 window.addEventListener('scroll', onScroll, { passive: true });
 
 initTabs();
 initPointerFx();
 initMarquee();
+initMobileCta();
 
-Promise.all([runPreloader(), pageLoaded]).then(() => {
-  window.scrollTo(0, 0);
-  document.body.classList.remove('is-loading');
-  document.body.classList.add('loaded');
-  $$('[data-hero-split]').forEach((el) => el.classList.add('is-in'));
+document.documentElement.classList.add('ready');
+// one frame later so the reveal transitions run from their start state
+requestAnimationFrame(() => {
   initReveal();
   initActiveNav();
   onScroll();

@@ -8,94 +8,168 @@
   <title>Our Team | Ecom Designs Hub</title>
   <meta name="description" content="Meet the team behind Ecom Designs Hub, the web development, UI/UX and SEO agency. Our CEO, founders and team leads who guide sales, production and development.">
   <link rel="canonical" href="https://ecomdesignshub.info/">
+  <!-- entrance animations hide content only while JS runs; if script.js never boots, everything shows after 3s -->
+  <script>document.documentElement.classList.add('js');setTimeout(function(){var d=document.documentElement;if(!d.classList.contains('ready'))d.classList.remove('js')},3000)</script>
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ecom Designs Hub">
   <meta property="og:title" content="Our Team | Ecom Designs Hub">
   <meta property="og:description" content="Meet the CEO, founders and team leads behind Ecom Designs Hub.">
   <meta property="og:url" content="https://ecomdesignshub.info/">
-  <meta property="og:image" content="https://ecomdesignshub.info/assets/ceo.jpg">
-  <meta property="og:image:width" content="1086">
-  <meta property="og:image:height" content="1448">
-  <meta property="og:image:alt" content="Talha Mumtaz, CEO of Ecom Designs Hub">
+  <meta property="og:image" content="https://ecomdesignshub.info/assets/og-team.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The people who lead Ecom Designs Hub, with CEO Talha Mumtaz">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Our Team | Ecom Designs Hub">
   <meta name="twitter:description" content="Meet the CEO, founders and team leads behind Ecom Designs Hub.">
-  <meta name="twitter:image" content="https://ecomdesignshub.info/assets/ceo.jpg">
+  <meta name="twitter:image" content="https://ecomdesignshub.info/assets/og-team.jpg">
+  <meta name="twitter:image:alt" content="The people who lead Ecom Designs Hub, with CEO Talha Mumtaz">
   <!-- search thumbnail: only the CEO photo -->
-  <meta name="thumbnail" content="https://ecomdesignshub.info/assets/ceo.jpg">
+  <meta name="thumbnail" content="https://ecomdesignshub.info/assets/team/talha-mumtaz-800.webp">
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "Organization",
-        "@id": "https://ecomdesignshub.com/#organization",
-        "name": "Ecom Designs Hub",
-        "url": "https://ecomdesignshub.com/",
-        "logo": "https://ecomdesignshub.info/assets/logo.jpeg",
-        "founder": [
-          { "@id": "https://ecomdesignshub.info/#shaleem-samar" },
-          { "@id": "https://ecomdesignshub.info/#uneeb-ahmed" }
-        ],
-        "sameAs": [
-          "https://ecomdesignshub.info/",
-          "https://fursonadesignshub.com/"
-        ]
+  <!-- build:jsonld --><script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://ecomdesignshub.com/#organization",
+      "name": "Ecom Designs Hub",
+      "url": "https://ecomdesignshub.com/",
+      "logo": "https://ecomdesignshub.info/assets/logo.jpeg",
+      "founder": [
+        {
+          "@id": "https://ecomdesignshub.info/#uneeb-ahmed"
+        },
+        {
+          "@id": "https://ecomdesignshub.info/#shaleem-samar"
+        }
+      ],
+      "sameAs": [
+        "https://ecomdesignshub.info/",
+        "https://fursonadesignshub.com/"
+      ]
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://ecomdesignshub.info/#webpage",
+      "url": "https://ecomdesignshub.info/",
+      "name": "Our Team | Ecom Designs Hub",
+      "description": "Meet the team behind Ecom Designs Hub: the CEO, founders and team leads.",
+      "about": {
+        "@id": "https://ecomdesignshub.com/#organization"
       },
-      {
-        "@type": "AboutPage",
-        "@id": "https://ecomdesignshub.info/#webpage",
-        "url": "https://ecomdesignshub.info/",
-        "name": "Our Team | Ecom Designs Hub",
-        "description": "Meet the team behind Ecom Designs Hub: the CEO, founders and team leads.",
-        "about": { "@id": "https://ecomdesignshub.com/#organization" },
-        "primaryImageOfPage": { "@type": "ImageObject", "url": "https://ecomdesignshub.info/assets/ceo.jpg", "width": 1086, "height": 1448, "caption": "Talha Mumtaz, CEO of Ecom Designs Hub" },
-        "image": "https://ecomdesignshub.info/assets/ceo.jpg",
-        "mainEntity": { "@id": "https://ecomdesignshub.com/#organization" }
+      "primaryImageOfPage": {
+        "@type": "ImageObject",
+        "url": "https://ecomdesignshub.info/assets/team/talha-mumtaz-800.webp",
+        "width": 800,
+        "height": 1067,
+        "caption": "Talha Mumtaz, CEO of Ecom Designs Hub"
       },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#talha-mumtaz", "name": "Talha Mumtaz", "jobTitle": "Chief Executive Officer", "image": "https://ecomdesignshub.info/assets/ceo.jpg", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#uneeb-ahmed", "name": "Uneeb Ahmed", "jobTitle": "Co-Founder & Chief Production Officer", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#shaleem-samar", "name": "Shaleem Samar", "jobTitle": "Founder & Chief Sales Officer", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-farooq", "name": "Muhammad Farooq", "jobTitle": "Floor Manager", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#ameer-hamza", "name": "Ameer Hamza", "jobTitle": "Sales Director", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-moiz", "name": "Muhammad Moiz", "jobTitle": "Team Lead, Development", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#muhammad-tasneem", "name": "Muhammad Tasneem", "jobTitle": "Senior Visual Designer", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } },
-      { "@type": "Person", "@id": "https://ecomdesignshub.info/#zainab-siddiqui", "name": "Zainab Siddiqui", "jobTitle": "HR Manager & Marketing Head", "worksFor": { "@id": "https://ecomdesignshub.com/#organization" } }
-    ]
-  }
-  </script>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      "image": "https://ecomdesignshub.info/assets/og-team.jpg",
+      "mainEntity": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#talha-mumtaz",
+      "name": "Talha Mumtaz",
+      "jobTitle": "Chief Executive Officer",
+      "image": "https://ecomdesignshub.info/assets/team/talha-mumtaz-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#uneeb-ahmed",
+      "name": "Uneeb Ahmed",
+      "jobTitle": "Co-Founder, Chief Production Officer",
+      "image": "https://ecomdesignshub.info/assets/team/uneeb-ahmed-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#shaleem-samar",
+      "name": "Shaleem Samar",
+      "jobTitle": "Founder, Chief Sales Officer",
+      "image": "https://ecomdesignshub.info/assets/team/shaleem-samar-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#ameer-hamza",
+      "name": "Ameer Hamza",
+      "jobTitle": "Sales Director",
+      "image": "https://ecomdesignshub.info/assets/team/ameer-hamza-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#muhammad-farooq",
+      "name": "Muhammad Farooq",
+      "jobTitle": "Floor Manager",
+      "image": "https://ecomdesignshub.info/assets/team/muhammad-farooq-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#muhammad-moiz",
+      "name": "Muhammad Moiz",
+      "jobTitle": "Senior Software Engineer",
+      "image": "https://ecomdesignshub.info/assets/team/muhammad-moiz-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#muhammad-tasneem",
+      "name": "Muhammad Tasneem",
+      "jobTitle": "Senior Visual Designer",
+      "image": "https://ecomdesignshub.info/assets/team/muhammad-tasneem-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://ecomdesignshub.info/#zainab-siddiqui",
+      "name": "Zainab Siddiqui",
+      "jobTitle": "HR Manager & Marketing Head",
+      "image": "https://ecomdesignshub.info/assets/team/kashmala-800.webp",
+      "worksFor": {
+        "@id": "https://ecomdesignshub.com/#organization"
+      }
+    }
+  ]
+}
+  </script><!-- /build:jsonld -->
+
   <link rel="icon" href="/favicon.ico" sizes="48x48">
   <link rel="icon" type="image/png" sizes="48x48" href="/assets/favicon-48.png">
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
   <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap">
+
+  <!-- fonts load without blocking the first paint (font-display: swap via &display=swap) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap"></noscript>
   <link rel="stylesheet" href="styles.css">
 </head>
-<body class="is-loading">
-
-  <!-- Preloader -->
-  <div class="preloader" aria-hidden="true">
-    <div class="pl-head pl-fade">
-      <span class="pl-brand-sm"><img class="pl-mark" src="assets/logo-mark.svg" alt="" width="38" height="38">Leadership Circle</span>
-      <span class="pl-meta">Our team · 2026</span>
-    </div>
-    <div class="pl-center">
-      <span class="pl-ring"></span>
-      <span class="pl-orb"></span>
-      <span class="pl-chip pl-fade"><span class="pulse"></span>Meet our team</span>
-      <p class="pl-word" id="plWord"><span class="pl-l">Ecom</span> <span class="pl-l"><em>Designs</em></span> <span class="pl-l">Hub</span></p>
-      <p class="pl-tag pl-fade">The people who lead us</p>
-    </div>
-    <div class="pl-foot pl-fade">
-      <span class="pl-label">Loading leadership</span>
-      <span class="pl-bar"><span id="plBar"></span></span>
-      <span class="pl-count"><span id="plCount">0</span>%</span>
-    </div>
-  </div>
+<body>
 
   <!-- Hover cursor ring (fine pointers only, shown over interactive elements) -->
   <div class="cursor-ring" aria-hidden="true"><span class="cursor-label"></span></div>
@@ -133,10 +207,10 @@
         <a class="nav-link" href="#structure" data-section="structure">Structure</a>
       </nav>
       <div class="header-actions">
-        <button type="button" class="btn btn-light btn-sm" data-open="talha" data-magnetic>
-          Meet the CEO
+        <a class="btn btn-light btn-sm" href="#contact" data-magnetic>
+          Start a project
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
-        </button>
+        </a>
         <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu">
           <span></span><span></span>
         </button>
@@ -151,9 +225,10 @@
       <a class="mm-link" href="#team" style="--i:1"><span>02</span>Team Leadership</a>
       <a class="mm-link" href="#philosophy" style="--i:2"><span>03</span>Philosophy</a>
       <a class="mm-link" href="#structure" style="--i:3"><span>04</span>Structure</a>
+      <a class="mm-link" href="#contact" style="--i:4"><span>05</span>Contact</a>
     </nav>
-    <div class="mm-foot" style="--i:4">
-      <button type="button" class="btn btn-accent" data-open="talha">Meet the CEO</button>
+    <div class="mm-foot" style="--i:5">
+      <a class="btn btn-accent" href="#contact">Start a project</a>
       <a class="mm-note" href="https://ecomdesignshub.com/">Visit Ecom Designs Hub</a>
     </div>
   </div>
@@ -164,31 +239,29 @@
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div class="hero-copy">
-          <span class="eyebrow-chip glass" data-hero style="--d:.1s"><span class="pulse"></span>Our Team · 2026</span>
-          <h1 class="hero-title" data-split data-hero-split>The people<br>who <em>lead</em> Ecom Designs Hub.</h1>
-          <p class="hero-sub" data-hero style="--d:.5s">Meet the founders and team leads of Ecom Designs Hub, the web development, UI/UX and SEO agency, and see how they decide, build and grow.</p>
-          <div class="hero-ctas" data-hero style="--d:.62s">
-            <a class="btn btn-light" href="#executive" data-magnetic>
-              Meet the leadership
+          <span class="eyebrow-chip glass" data-hero style="--d:.05s"><span class="pulse"></span>Our Team · 2026</span>
+          <h1 class="hero-title" data-hero style="--d:.08s">The people<br>who <em>lead</em> Ecom Designs Hub.</h1>
+          <p class="hero-sub" data-hero style="--d:.2s">Meet the founders and team leads of Ecom Designs Hub, the web development, UI/UX and SEO agency, and see how they decide, build and grow.</p>
+          <div class="hero-ctas" data-hero style="--d:.28s">
+            <a class="btn btn-light" href="#contact" data-magnetic>
+              Start a project
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
             </a>
-            <a class="btn btn-ghost" href="#structure" data-magnetic>See the structure</a>
+            <a class="btn btn-ghost" href="#executive" data-magnetic>Meet the leadership</a>
           </div>
-          <div class="hero-stats" data-hero style="--d:.74s">
-            <div class="stat glass"><strong data-count="1" data-pad="2">00</strong><span>Chief Executive</span></div>
-            <div class="stat glass"><strong data-count="2" data-pad="2">00</strong><span>Founders</span></div>
-            <div class="stat glass"><strong data-count="5" data-pad="2">00</strong><span>Core Team</span></div>
+          <div class="hero-stats" data-hero style="--d:.36s">
+            <!-- build:hero-stats --><div class="stat glass"><strong data-count="1" data-pad="2">01</strong><span>Chief Executive</span></div><div class="stat glass"><strong data-count="2" data-pad="2">02</strong><span>Founders</span></div><div class="stat glass"><strong data-count="5" data-pad="2">05</strong><span>Core Team</span></div><!-- /build:hero-stats -->
           </div>
         </div>
 
-        <div class="hero-visual" data-hero style="--d:.3s">
+        <div class="hero-visual" data-hero style="--d:.1s">
           <svg class="ring-text" viewBox="0 0 200 200" aria-hidden="true">
             <defs><path id="circlePath" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
             <text><textPath href="#circlePath">LEADERSHIP CIRCLE · ECOM DESIGNS HUB · 2026 · </textPath></text>
           </svg>
           <div class="tilt-wrap" data-tilt>
-            <button type="button" class="portrait-card glass" data-open="talha" data-cursor="View" aria-label="Open profile of Talha Mumtaz, Chief Executive Officer">
-              <span class="portrait-img"><img src="assets/ceo.jpg" alt="" width="1086" height="1448"></span>
+            <button type="button" class="portrait-card glass" data-open="talha" data-cursor="View">
+              <span class="portrait-img"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="(max-width: 960px) 88vw, 440px" width="800" height="1067" alt="Talha Mumtaz, Chief Executive Officer" fetchpriority="high" decoding="async"></span>
               <span class="float-chip chip-name glass-dark"><strong>Talha Mumtaz</strong><small>Chief Executive Officer</small></span>
               <span class="float-chip chip-since glass-dark"><span class="pulse"></span>Leading since 2021</span>
             </button>
@@ -198,10 +271,42 @@
       <a class="scroll-cue" href="#executive" aria-label="Scroll to executive leadership"><span>Scroll</span><i></i></a>
     </section>
 
-    <!-- Marquee -->
+    <!-- Marquee (decorative: every name here is also in the cards below) -->
     <section class="marquee" aria-hidden="true">
-      <div class="mq-row"><div class="mq-track" id="mqNames"></div></div>
-      <div class="mq-row reverse"><div class="mq-track outline" id="mqValues"></div></div>
+      <div class="mq-row"><div class="mq-track" id="mqNames"><!-- build:mq-names --><div class="mq-group">
+      <span class="mq-item mq-person" data-open="talha"><span class="av"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="talha-mumtaz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Talha Mumtaz</b><small>CEO</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="uneeb"><span class="av"><img src="assets/team/uneeb-ahmed-400.webp" srcset="assets/team/uneeb-ahmed-160.webp 160w, assets/team/uneeb-ahmed-400.webp 400w, assets/team/uneeb-ahmed-600.webp 600w, assets/team/uneeb-ahmed-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="uneeb-ahmed" loading="lazy" decoding="async"></span><span class="mq-name"><b>Uneeb Ahmed</b><small>Co-Founder · CPO</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="shaleem"><span class="av"><img src="assets/team/shaleem-samar-400.webp" srcset="assets/team/shaleem-samar-160.webp 160w, assets/team/shaleem-samar-400.webp 400w, assets/team/shaleem-samar-600.webp 600w, assets/team/shaleem-samar-800.webp 800w" sizes="120px" width="800" height="1188" alt="" data-photo="shaleem-samar" loading="lazy" decoding="async"></span><span class="mq-name"><b>Shaleem Samar</b><small>Founder · CSO</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="hamza"><span class="av"><img src="assets/team/ameer-hamza-400.webp" srcset="assets/team/ameer-hamza-160.webp 160w, assets/team/ameer-hamza-400.webp 400w, assets/team/ameer-hamza-600.webp 600w, assets/team/ameer-hamza-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="ameer-hamza" loading="lazy" decoding="async"></span><span class="mq-name"><b>Ameer Hamza</b><small>Sales Director</small></span></span><span class="mq-star" style="color:#E2487F">✦</span>
+      <span class="mq-item mq-person" data-open="farooq"><span class="av"><img src="assets/team/muhammad-farooq-400.webp" srcset="assets/team/muhammad-farooq-160.webp 160w, assets/team/muhammad-farooq-400.webp 400w, assets/team/muhammad-farooq-600.webp 600w, assets/team/muhammad-farooq-800.webp 800w" sizes="120px" width="800" height="968" alt="" data-photo="muhammad-farooq" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Farooq</b><small>Floor Manager</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="moiz"><span class="av"><img src="assets/team/muhammad-moiz-400.webp" srcset="assets/team/muhammad-moiz-160.webp 160w, assets/team/muhammad-moiz-400.webp 400w, assets/team/muhammad-moiz-600.webp 600w, assets/team/muhammad-moiz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-moiz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Moiz</b><small>Team Lead · Development</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="tasneem"><span class="av"><img src="assets/team/muhammad-tasneem-400.webp" srcset="assets/team/muhammad-tasneem-160.webp 160w, assets/team/muhammad-tasneem-400.webp 400w, assets/team/muhammad-tasneem-600.webp 600w, assets/team/muhammad-tasneem-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-tasneem" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Tasneem</b><small>Senior Visual Designer</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="zainab"><span class="av"><img src="assets/team/kashmala-400.webp" srcset="assets/team/kashmala-160.webp 160w, assets/team/kashmala-400.webp 400w, assets/team/kashmala-600.webp 512w, assets/team/kashmala-800.webp 512w" sizes="120px" width="512" height="575" alt="" data-photo="kashmala" loading="lazy" decoding="async"></span><span class="mq-name"><b>Zainab Siddiqui</b><small>HR Manager · Marketing Head</small></span></span><span class="mq-star" style="color:#E2487F">✦</span>
+      <span class="mq-item mq-person" data-open="talha"><span class="av"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="talha-mumtaz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Talha Mumtaz</b><small>CEO</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="uneeb"><span class="av"><img src="assets/team/uneeb-ahmed-400.webp" srcset="assets/team/uneeb-ahmed-160.webp 160w, assets/team/uneeb-ahmed-400.webp 400w, assets/team/uneeb-ahmed-600.webp 600w, assets/team/uneeb-ahmed-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="uneeb-ahmed" loading="lazy" decoding="async"></span><span class="mq-name"><b>Uneeb Ahmed</b><small>Co-Founder · CPO</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="shaleem"><span class="av"><img src="assets/team/shaleem-samar-400.webp" srcset="assets/team/shaleem-samar-160.webp 160w, assets/team/shaleem-samar-400.webp 400w, assets/team/shaleem-samar-600.webp 600w, assets/team/shaleem-samar-800.webp 800w" sizes="120px" width="800" height="1188" alt="" data-photo="shaleem-samar" loading="lazy" decoding="async"></span><span class="mq-name"><b>Shaleem Samar</b><small>Founder · CSO</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="hamza"><span class="av"><img src="assets/team/ameer-hamza-400.webp" srcset="assets/team/ameer-hamza-160.webp 160w, assets/team/ameer-hamza-400.webp 400w, assets/team/ameer-hamza-600.webp 600w, assets/team/ameer-hamza-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="ameer-hamza" loading="lazy" decoding="async"></span><span class="mq-name"><b>Ameer Hamza</b><small>Sales Director</small></span></span><span class="mq-star" style="color:#E2487F">✦</span>
+      <span class="mq-item mq-person" data-open="farooq"><span class="av"><img src="assets/team/muhammad-farooq-400.webp" srcset="assets/team/muhammad-farooq-160.webp 160w, assets/team/muhammad-farooq-400.webp 400w, assets/team/muhammad-farooq-600.webp 600w, assets/team/muhammad-farooq-800.webp 800w" sizes="120px" width="800" height="968" alt="" data-photo="muhammad-farooq" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Farooq</b><small>Floor Manager</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="moiz"><span class="av"><img src="assets/team/muhammad-moiz-400.webp" srcset="assets/team/muhammad-moiz-160.webp 160w, assets/team/muhammad-moiz-400.webp 400w, assets/team/muhammad-moiz-600.webp 600w, assets/team/muhammad-moiz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-moiz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Moiz</b><small>Team Lead · Development</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="tasneem"><span class="av"><img src="assets/team/muhammad-tasneem-400.webp" srcset="assets/team/muhammad-tasneem-160.webp 160w, assets/team/muhammad-tasneem-400.webp 400w, assets/team/muhammad-tasneem-600.webp 600w, assets/team/muhammad-tasneem-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-tasneem" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Tasneem</b><small>Senior Visual Designer</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="zainab"><span class="av"><img src="assets/team/kashmala-400.webp" srcset="assets/team/kashmala-160.webp 160w, assets/team/kashmala-400.webp 400w, assets/team/kashmala-600.webp 512w, assets/team/kashmala-800.webp 512w" sizes="120px" width="512" height="575" alt="" data-photo="kashmala" loading="lazy" decoding="async"></span><span class="mq-name"><b>Zainab Siddiqui</b><small>HR Manager · Marketing Head</small></span></span><span class="mq-star" style="color:#E2487F">✦</span></div><div class="mq-group">
+      <span class="mq-item mq-person" data-open="talha"><span class="av"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="talha-mumtaz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Talha Mumtaz</b><small>CEO</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="uneeb"><span class="av"><img src="assets/team/uneeb-ahmed-400.webp" srcset="assets/team/uneeb-ahmed-160.webp 160w, assets/team/uneeb-ahmed-400.webp 400w, assets/team/uneeb-ahmed-600.webp 600w, assets/team/uneeb-ahmed-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="uneeb-ahmed" loading="lazy" decoding="async"></span><span class="mq-name"><b>Uneeb Ahmed</b><small>Co-Founder · CPO</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="shaleem"><span class="av"><img src="assets/team/shaleem-samar-400.webp" srcset="assets/team/shaleem-samar-160.webp 160w, assets/team/shaleem-samar-400.webp 400w, assets/team/shaleem-samar-600.webp 600w, assets/team/shaleem-samar-800.webp 800w" sizes="120px" width="800" height="1188" alt="" data-photo="shaleem-samar" loading="lazy" decoding="async"></span><span class="mq-name"><b>Shaleem Samar</b><small>Founder · CSO</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="hamza"><span class="av"><img src="assets/team/ameer-hamza-400.webp" srcset="assets/team/ameer-hamza-160.webp 160w, assets/team/ameer-hamza-400.webp 400w, assets/team/ameer-hamza-600.webp 600w, assets/team/ameer-hamza-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="ameer-hamza" loading="lazy" decoding="async"></span><span class="mq-name"><b>Ameer Hamza</b><small>Sales Director</small></span></span><span class="mq-star" style="color:#E2487F">✦</span>
+      <span class="mq-item mq-person" data-open="farooq"><span class="av"><img src="assets/team/muhammad-farooq-400.webp" srcset="assets/team/muhammad-farooq-160.webp 160w, assets/team/muhammad-farooq-400.webp 400w, assets/team/muhammad-farooq-600.webp 600w, assets/team/muhammad-farooq-800.webp 800w" sizes="120px" width="800" height="968" alt="" data-photo="muhammad-farooq" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Farooq</b><small>Floor Manager</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="moiz"><span class="av"><img src="assets/team/muhammad-moiz-400.webp" srcset="assets/team/muhammad-moiz-160.webp 160w, assets/team/muhammad-moiz-400.webp 400w, assets/team/muhammad-moiz-600.webp 600w, assets/team/muhammad-moiz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-moiz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Moiz</b><small>Team Lead · Development</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="tasneem"><span class="av"><img src="assets/team/muhammad-tasneem-400.webp" srcset="assets/team/muhammad-tasneem-160.webp 160w, assets/team/muhammad-tasneem-400.webp 400w, assets/team/muhammad-tasneem-600.webp 600w, assets/team/muhammad-tasneem-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-tasneem" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Tasneem</b><small>Senior Visual Designer</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="zainab"><span class="av"><img src="assets/team/kashmala-400.webp" srcset="assets/team/kashmala-160.webp 160w, assets/team/kashmala-400.webp 400w, assets/team/kashmala-600.webp 512w, assets/team/kashmala-800.webp 512w" sizes="120px" width="512" height="575" alt="" data-photo="kashmala" loading="lazy" decoding="async"></span><span class="mq-name"><b>Zainab Siddiqui</b><small>HR Manager · Marketing Head</small></span></span><span class="mq-star" style="color:#E2487F">✦</span>
+      <span class="mq-item mq-person" data-open="talha"><span class="av"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="talha-mumtaz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Talha Mumtaz</b><small>CEO</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="uneeb"><span class="av"><img src="assets/team/uneeb-ahmed-400.webp" srcset="assets/team/uneeb-ahmed-160.webp 160w, assets/team/uneeb-ahmed-400.webp 400w, assets/team/uneeb-ahmed-600.webp 600w, assets/team/uneeb-ahmed-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="uneeb-ahmed" loading="lazy" decoding="async"></span><span class="mq-name"><b>Uneeb Ahmed</b><small>Co-Founder · CPO</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="shaleem"><span class="av"><img src="assets/team/shaleem-samar-400.webp" srcset="assets/team/shaleem-samar-160.webp 160w, assets/team/shaleem-samar-400.webp 400w, assets/team/shaleem-samar-600.webp 600w, assets/team/shaleem-samar-800.webp 800w" sizes="120px" width="800" height="1188" alt="" data-photo="shaleem-samar" loading="lazy" decoding="async"></span><span class="mq-name"><b>Shaleem Samar</b><small>Founder · CSO</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="hamza"><span class="av"><img src="assets/team/ameer-hamza-400.webp" srcset="assets/team/ameer-hamza-160.webp 160w, assets/team/ameer-hamza-400.webp 400w, assets/team/ameer-hamza-600.webp 600w, assets/team/ameer-hamza-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="ameer-hamza" loading="lazy" decoding="async"></span><span class="mq-name"><b>Ameer Hamza</b><small>Sales Director</small></span></span><span class="mq-star" style="color:#E2487F">✦</span>
+      <span class="mq-item mq-person" data-open="farooq"><span class="av"><img src="assets/team/muhammad-farooq-400.webp" srcset="assets/team/muhammad-farooq-160.webp 160w, assets/team/muhammad-farooq-400.webp 400w, assets/team/muhammad-farooq-600.webp 600w, assets/team/muhammad-farooq-800.webp 800w" sizes="120px" width="800" height="968" alt="" data-photo="muhammad-farooq" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Farooq</b><small>Floor Manager</small></span></span><span class="mq-star" style="color:#6C5CFF">✦</span>
+      <span class="mq-item mq-person" data-open="moiz"><span class="av"><img src="assets/team/muhammad-moiz-400.webp" srcset="assets/team/muhammad-moiz-160.webp 160w, assets/team/muhammad-moiz-400.webp 400w, assets/team/muhammad-moiz-600.webp 600w, assets/team/muhammad-moiz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-moiz" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Moiz</b><small>Team Lead · Development</small></span></span><span class="mq-star" style="color:#FF7A3D">✦</span>
+      <span class="mq-item mq-person" data-open="tasneem"><span class="av"><img src="assets/team/muhammad-tasneem-400.webp" srcset="assets/team/muhammad-tasneem-160.webp 160w, assets/team/muhammad-tasneem-400.webp 400w, assets/team/muhammad-tasneem-600.webp 600w, assets/team/muhammad-tasneem-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-tasneem" loading="lazy" decoding="async"></span><span class="mq-name"><b>Muhammad Tasneem</b><small>Senior Visual Designer</small></span></span><span class="mq-star" style="color:#22C7A9">✦</span>
+      <span class="mq-item mq-person" data-open="zainab"><span class="av"><img src="assets/team/kashmala-400.webp" srcset="assets/team/kashmala-160.webp 160w, assets/team/kashmala-400.webp 400w, assets/team/kashmala-600.webp 512w, assets/team/kashmala-800.webp 512w" sizes="120px" width="512" height="575" alt="" data-photo="kashmala" loading="lazy" decoding="async"></span><span class="mq-name"><b>Zainab Siddiqui</b><small>HR Manager · Marketing Head</small></span></span><span class="mq-star" style="color:#E2487F">✦</span></div><!-- /build:mq-names --></div></div>
+      <div class="mq-row reverse"><div class="mq-track outline" id="mqValues"><!-- build:mq-values --><div class="mq-group"><span class="mq-item">Ownership</span><span class="mq-star" style="color:#FF7A3D">✦</span><span class="mq-item">Craft first</span><span class="mq-star" style="color:#22C7A9">✦</span><span class="mq-item">Open doors</span><span class="mq-star" style="color:#E2487F">✦</span><span class="mq-item">Grow people</span><span class="mq-star" style="color:#6C5CFF">✦</span><span class="mq-item">Decide in the open</span><span class="mq-star" style="color:#FF7A3D">✦</span><span class="mq-item">Ownership</span><span class="mq-star" style="color:#FF7A3D">✦</span><span class="mq-item">Craft first</span><span class="mq-star" style="color:#22C7A9">✦</span><span class="mq-item">Open doors</span><span class="mq-star" style="color:#E2487F">✦</span><span class="mq-item">Grow people</span><span class="mq-star" style="color:#6C5CFF">✦</span><span class="mq-item">Decide in the open</span><span class="mq-star" style="color:#FF7A3D">✦</span></div><div class="mq-group"><span class="mq-item">Ownership</span><span class="mq-star" style="color:#FF7A3D">✦</span><span class="mq-item">Craft first</span><span class="mq-star" style="color:#22C7A9">✦</span><span class="mq-item">Open doors</span><span class="mq-star" style="color:#E2487F">✦</span><span class="mq-item">Grow people</span><span class="mq-star" style="color:#6C5CFF">✦</span><span class="mq-item">Decide in the open</span><span class="mq-star" style="color:#FF7A3D">✦</span><span class="mq-item">Ownership</span><span class="mq-star" style="color:#FF7A3D">✦</span><span class="mq-item">Craft first</span><span class="mq-star" style="color:#22C7A9">✦</span><span class="mq-item">Open doors</span><span class="mq-star" style="color:#E2487F">✦</span><span class="mq-item">Grow people</span><span class="mq-star" style="color:#6C5CFF">✦</span><span class="mq-item">Decide in the open</span><span class="mq-star" style="color:#FF7A3D">✦</span></div><!-- /build:mq-values --></div></div>
     </section>
 
     <!-- 2. Executive leadership -->
@@ -214,8 +319,62 @@
           </div>
           <p class="section-lede" data-reveal style="--d:.15s">The chief executive and the two founders accountable for the company’s strategy, craft and people.</p>
         </header>
-        <div id="ceoFeature"></div>
-        <div class="founders" id="founders"></div>
+        <div id="ceoFeature"><!-- build:exec -->
+    <div data-reveal>
+      <article class="ceo card glass" data-open="talha" data-cursor="Profile">
+        <span class="avatar"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="(max-width: 960px) 92vw, 480px" width="800" height="1067" alt="Talha Mumtaz, Chief Executive Officer" data-photo="talha-mumtaz" loading="lazy" decoding="async"></span>
+        <div class="ceo-body">
+          <span class="badge badge-accent"><span class="pulse"></span>Chief Executive Officer</span>
+          <h3 class="ceo-name">Talha Mumtaz</h3>
+          <p class="quote">“We grow when every team knows exactly why its work matters to the client.”</p>
+          <p class="ceo-bio">Talha leads Ecom Designs Hub’s strategy, client partnerships and long-term growth. He works side by side with founder Shaleem Samar and co-founder Uneeb Ahmed, keeping sales, production and delivery moving in one direction.</p>
+          <div class="meta-grid"><div class="meta"><small>Leads</small><span>Strategy & growth</span></div><div class="meta"><small>Expertise</small><span>E-commerce, partnerships</span></div><div class="meta"><small>Direct reports</small><span>2 founders</span></div></div>
+          <div class="card-actions">
+            <button type="button" class="btn btn-accent" data-open="talha">Read full profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+            
+          </div>
+        </div>
+      </article>
+    </div><!-- /build:exec --></div>
+        <div class="founders" id="founders"><!-- build:founders -->
+      <div data-reveal style="--d:0s">
+        <article class="fcard card glass" data-feature="uneeb" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">Co-Founder</span>
+            <img src="assets/team/uneeb-ahmed-400.webp" srcset="assets/team/uneeb-ahmed-160.webp 160w, assets/team/uneeb-ahmed-400.webp 400w, assets/team/uneeb-ahmed-600.webp 600w, assets/team/uneeb-ahmed-800.webp 800w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 45vw, 210px" width="800" height="1067" alt="Uneeb Ahmed, Co-Founder – Chief Production Officer" class="cutout" data-photo="uneeb-ahmed" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>“Great production is a calm team shipping work it is proud of.”</span></span>
+          </span>
+          <div class="fbody">
+            <h3>Uneeb Ahmed</h3>
+            <span class="role">Co-Founder · Chief Production Officer</span>
+            <p>Uneeb oversees production across design, development and operations, turning every signed project into a finished store on schedule.</p>
+            <div class="tags"><span class="tag">Production</span><span class="tag">Project delivery</span><span class="tag">Team leadership</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="uneeb">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+      <div data-reveal style="--d:0.12s">
+        <article class="fcard card glass" data-feature="shaleem" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">Founder</span>
+            <img src="assets/team/shaleem-samar-400.webp" srcset="assets/team/shaleem-samar-160.webp 160w, assets/team/shaleem-samar-400.webp 400w, assets/team/shaleem-samar-600.webp 600w, assets/team/shaleem-samar-800.webp 800w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 45vw, 210px" width="800" height="1188" alt="Shaleem Samar, Founder – Chief Sales Officer" data-photo="shaleem-samar" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>“We sell outcomes, not hours — and then we deliver them.”</span></span>
+          </span>
+          <div class="fbody">
+            <h3>Shaleem Samar</h3>
+            <span class="role">Founder · Chief Sales Officer</span>
+            <p>Shaleem leads sales and client acquisition, building the relationships that bring new brands to Ecom Designs Hub and keeping every proposal honest about what the team can deliver.</p>
+            <div class="tags"><span class="tag">Sales</span><span class="tag">Negotiation</span><span class="tag">Client relations</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="shaleem">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div><!-- /build:founders --></div>
       </div>
     </section>
 
@@ -237,7 +396,108 @@
           <button type="button" class="tab" data-filter="Design" aria-pressed="false">Design</button>
           <button type="button" class="tab" data-filter="HR &amp; Marketing" aria-pressed="false">HR &amp; Marketing</button>
         </div>
-        <div class="team-grid" id="teamGrid"></div>
+        <p class="sr-only" id="filterStatus" aria-live="polite"></p>
+        <div class="team-grid" id="teamGrid"><!-- build:team -->
+      <div class="team-item" data-dept="Sales" data-reveal style="--d:0s">
+        <article class="tcard card glass" data-open="hamza" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">Sales</span>
+            <img src="assets/team/ameer-hamza-400.webp" srcset="assets/team/ameer-hamza-160.webp 160w, assets/team/ameer-hamza-400.webp 400w, assets/team/ameer-hamza-600.webp 600w, assets/team/ameer-hamza-800.webp 800w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 400px" width="800" height="1067" alt="Ameer Hamza, Sales Director" class="cutout" data-photo="ameer-hamza" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>Leads the sales team</span><b>Profile →</b></span>
+          </span>
+          <div class="tbody">
+            <span class="badge badge-teal">Director</span>
+            <h3>Ameer Hamza</h3>
+            <span class="role-plain">Sales Director</span>
+            <p>Hamza leads the sales team day to day, from first call to signed proposal.</p>
+            <div class="tags"><span class="tag">Sales</span><span class="tag">Lead generation</span><span class="tag">Client communication</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="hamza">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="team-item" data-dept="Sales" data-reveal style="--d:0.1s">
+        <article class="tcard card glass" data-open="farooq" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">Sales</span>
+            <img src="assets/team/muhammad-farooq-400.webp" srcset="assets/team/muhammad-farooq-160.webp 160w, assets/team/muhammad-farooq-400.webp 400w, assets/team/muhammad-farooq-600.webp 600w, assets/team/muhammad-farooq-800.webp 800w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 400px" width="800" height="968" alt="Muhammad Farooq, Floor Manager" data-photo="muhammad-farooq" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>Runs the sales floor</span><b>Profile →</b></span>
+          </span>
+          <div class="tbody">
+            <span class="badge badge-orange">Manager</span>
+            <h3>Muhammad Farooq</h3>
+            <span class="role-plain">Floor Manager</span>
+            <p>Farooq runs the sales floor day to day, keeping the team focused, supported and on target.</p>
+            <div class="tags"><span class="tag">Floor management</span><span class="tag">Team coaching</span><span class="tag">Sales operations</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="farooq">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="team-item" data-dept="Development" data-reveal style="--d:0.2s">
+        <article class="tcard card glass" data-open="moiz" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">Development</span>
+            <img src="assets/team/muhammad-moiz-400.webp" srcset="assets/team/muhammad-moiz-160.webp 160w, assets/team/muhammad-moiz-400.webp 400w, assets/team/muhammad-moiz-600.webp 600w, assets/team/muhammad-moiz-800.webp 800w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 400px" width="800" height="1067" alt="Muhammad Moiz, Senior Software Engineer" data-photo="muhammad-moiz" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>Leads the development team</span><b>Profile →</b></span>
+          </span>
+          <div class="tbody">
+            <span class="badge badge-teal">Team Lead</span>
+            <h3>Muhammad Moiz</h3>
+            <span class="role-plain">Senior Software Engineer</span>
+            <p>Moiz leads development, building large-scale .NET applications that stay fast as they grow.</p>
+            <div class="tags"><span class="tag">.NET / C#</span><span class="tag">ASP.NET Core</span><span class="tag">Large-scale systems</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="moiz">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="team-item" data-dept="Design" data-reveal style="--d:0.30000000000000004s">
+        <article class="tcard card glass" data-open="tasneem" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">Design</span>
+            <img src="assets/team/muhammad-tasneem-400.webp" srcset="assets/team/muhammad-tasneem-160.webp 160w, assets/team/muhammad-tasneem-400.webp 400w, assets/team/muhammad-tasneem-600.webp 600w, assets/team/muhammad-tasneem-800.webp 800w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 400px" width="800" height="1067" alt="Muhammad Tasneem, Senior Visual Designer" data-photo="muhammad-tasneem" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>Shapes the visual design</span><b>Profile →</b></span>
+          </span>
+          <div class="tbody">
+            <span class="badge badge-teal">Senior Designer</span>
+            <h3>Muhammad Tasneem</h3>
+            <span class="role-plain">Senior Visual Designer</span>
+            <p>Tasneem leads visual design, from brand look and feel to polished store layouts.</p>
+            <div class="tags"><span class="tag">Visual design</span><span class="tag">UI design</span><span class="tag">Branding</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="tasneem">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div>
+      <div class="team-item" data-dept="HR & Marketing" data-reveal style="--d:0.4s">
+        <article class="tcard card glass" data-open="zainab" data-cursor="View">
+          <span class="avatar">
+            <span class="badge badge-float">HR & Marketing</span>
+            <img src="assets/team/kashmala-400.webp" srcset="assets/team/kashmala-160.webp 160w, assets/team/kashmala-400.webp 400w, assets/team/kashmala-600.webp 512w, assets/team/kashmala-800.webp 512w" sizes="(max-width: 600px) 92vw, (max-width: 1100px) 46vw, 400px" width="512" height="575" alt="Zainab Siddiqui, HR Manager & Marketing Head" data-photo="kashmala" loading="lazy" decoding="async">
+            <span class="slide-up glass-dark"><span>Leads HR and marketing</span><b>Profile →</b></span>
+          </span>
+          <div class="tbody">
+            <span class="badge badge-orange">Manager</span>
+            <h3>Zainab Siddiqui</h3>
+            <span class="role-plain">HR Manager & Marketing Head</span>
+            <p>Zainab manages HR and heads marketing, from hiring the team to growing the brand.</p>
+            <div class="tags"><span class="tag">HR management</span><span class="tag">Recruitment</span><span class="tag">Marketing strategy</span></div>
+            <div class="card-actions">
+              <button type="button" class="more" data-open="zainab">View profile <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg></button>
+              
+            </div>
+          </div>
+        </article>
+      </div><!-- /build:team --></div>
       </div>
     </section>
 
@@ -248,6 +508,7 @@
           <div class="philo-quote glass" data-reveal>
             <span class="kicker kicker-warm">03 — Leadership Philosophy</span>
             <h2 class="philo-title" id="phil-title">“Lead close to the work, decide in the open, and leave every client <em>better</em> than we found them.”</h2>
+            <!-- TODO: attribute this quote to a named person (e.g. "— Name, Role") instead of "The leadership team" -->
             <span class="philo-sign">— The leadership team</span>
           </div>
           <ol class="principles">
@@ -271,28 +532,29 @@
           <p class="section-lede" data-reveal style="--d:.15s">Reporting lines from the CEO, through the founders, to each team. Tap anyone to open their profile.</p>
         </header>
         <div class="tree-wrap glass" data-reveal>
-          <ul class="tree">
-            <li style="--lvl:0">
-              <button type="button" class="node node-ceo" data-open="talha"><span class="av"><img src="assets/ceo.jpg" alt=""></span><span class="nt"><strong>Talha Mumtaz</strong><small>Chief Executive Officer</small></span></button>
-              <ul>
-                <li style="--lvl:1">
-                  <button type="button" class="node" data-open="uneeb"><span class="av"><img src="assets/uneebCo-founder.png" alt="" class="cutout"></span><span class="nt"><strong>Uneeb Ahmed</strong><small>Co-Founder · CPO</small></span></button>
-                  <ul>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="tasneem"><span class="av sq"><img src="assets/MuhammadTasneem.PNG" alt=""></span><span class="nt"><strong>Muhammad Tasneem</strong><small>Senior Visual Designer</small></span></button></li>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="moiz"><span class="av sq"><img src="assets/MoizTL.jpg" alt=""></span><span class="nt"><strong>Muhammad Moiz</strong><small>Team Lead · Development</small></span></button></li>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="zainab"><span class="av sq"><img src="assets/kashmala.jpeg" alt=""></span><span class="nt"><strong>Zainab Siddiqui</strong><small>HR Manager · Marketing Head</small></span></button></li>
-                  </ul>
-                </li>
-                <li style="--lvl:1">
-                  <button type="button" class="node" data-open="shaleem"><span class="av"><img src="assets/shaleem-portrait.jpg" alt=""></span><span class="nt"><strong>Shaleem Samar</strong><small>Founder · CSO</small></span></button>
-                  <ul>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="farooq"><span class="av sq"><img src="assets/farooq-TlandFloorManager.PNG" alt=""></span><span class="nt"><strong>Farooq</strong><small>Floor Manager</small></span></button></li>
-                    <li style="--lvl:2"><button type="button" class="node node-team" data-open="hamza"><span class="av sq"><img src="assets/Ameer Hamza.png" alt="" class="cutout"></span><span class="nt"><strong>Ameer Hamza</strong><small>Sales Director</small></span></button></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
+          <ul class="tree"><!-- build:tree --><li style="--lvl:0"><button type="button" class="node node-ceo" data-open="talha"><span class="av"><img src="assets/team/talha-mumtaz-400.webp" srcset="assets/team/talha-mumtaz-160.webp 160w, assets/team/talha-mumtaz-400.webp 400w, assets/team/talha-mumtaz-600.webp 600w, assets/team/talha-mumtaz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="talha-mumtaz" loading="lazy" decoding="async"></span><span class="nt"><strong>Talha Mumtaz</strong><small>Chief Executive Officer</small></span></button><ul><li style="--lvl:1"><button type="button" class="node" data-open="uneeb"><span class="av"><img src="assets/team/uneeb-ahmed-400.webp" srcset="assets/team/uneeb-ahmed-160.webp 160w, assets/team/uneeb-ahmed-400.webp 400w, assets/team/uneeb-ahmed-600.webp 600w, assets/team/uneeb-ahmed-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="uneeb-ahmed" loading="lazy" decoding="async"></span><span class="nt"><strong>Uneeb Ahmed</strong><small>Co-Founder · CPO</small></span></button><ul><li style="--lvl:2"><button type="button" class="node node-team" data-open="moiz"><span class="av sq"><img src="assets/team/muhammad-moiz-400.webp" srcset="assets/team/muhammad-moiz-160.webp 160w, assets/team/muhammad-moiz-400.webp 400w, assets/team/muhammad-moiz-600.webp 600w, assets/team/muhammad-moiz-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-moiz" loading="lazy" decoding="async"></span><span class="nt"><strong>Muhammad Moiz</strong><small>Team Lead · Development</small></span></button></li><li style="--lvl:2"><button type="button" class="node node-team" data-open="tasneem"><span class="av sq"><img src="assets/team/muhammad-tasneem-400.webp" srcset="assets/team/muhammad-tasneem-160.webp 160w, assets/team/muhammad-tasneem-400.webp 400w, assets/team/muhammad-tasneem-600.webp 600w, assets/team/muhammad-tasneem-800.webp 800w" sizes="120px" width="800" height="1067" alt="" data-photo="muhammad-tasneem" loading="lazy" decoding="async"></span><span class="nt"><strong>Muhammad Tasneem</strong><small>Senior Visual Designer</small></span></button></li><li style="--lvl:2"><button type="button" class="node node-team" data-open="zainab"><span class="av sq"><img src="assets/team/kashmala-400.webp" srcset="assets/team/kashmala-160.webp 160w, assets/team/kashmala-400.webp 400w, assets/team/kashmala-600.webp 512w, assets/team/kashmala-800.webp 512w" sizes="120px" width="512" height="575" alt="" data-photo="kashmala" loading="lazy" decoding="async"></span><span class="nt"><strong>Zainab Siddiqui</strong><small>HR Manager · Marketing Head</small></span></button></li></ul></li><li style="--lvl:1"><button type="button" class="node" data-open="shaleem"><span class="av"><img src="assets/team/shaleem-samar-400.webp" srcset="assets/team/shaleem-samar-160.webp 160w, assets/team/shaleem-samar-400.webp 400w, assets/team/shaleem-samar-600.webp 600w, assets/team/shaleem-samar-800.webp 800w" sizes="120px" width="800" height="1188" alt="" data-photo="shaleem-samar" loading="lazy" decoding="async"></span><span class="nt"><strong>Shaleem Samar</strong><small>Founder · CSO</small></span></button><ul><li style="--lvl:2"><button type="button" class="node node-team" data-open="hamza"><span class="av sq"><img src="assets/team/ameer-hamza-400.webp" srcset="assets/team/ameer-hamza-160.webp 160w, assets/team/ameer-hamza-400.webp 400w, assets/team/ameer-hamza-600.webp 600w, assets/team/ameer-hamza-800.webp 800w" sizes="120px" width="800" height="1067" alt="" class="cutout" data-photo="ameer-hamza" loading="lazy" decoding="async"></span><span class="nt"><strong>Ameer Hamza</strong><small>Sales Director</small></span></button></li><li style="--lvl:2"><button type="button" class="node node-team" data-open="farooq"><span class="av sq"><img src="assets/team/muhammad-farooq-400.webp" srcset="assets/team/muhammad-farooq-160.webp 160w, assets/team/muhammad-farooq-400.webp 400w, assets/team/muhammad-farooq-600.webp 600w, assets/team/muhammad-farooq-800.webp 800w" sizes="120px" width="800" height="968" alt="" data-photo="muhammad-farooq" loading="lazy" decoding="async"></span><span class="nt"><strong>Muhammad Farooq</strong><small>Floor Manager</small></span></button></li></ul></li></ul></li><!-- /build:tree --></ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Contact -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container">
+        <div class="contact-card glass" data-reveal>
+          <span class="kicker kicker-warm">05 — Work with us</span>
+          <h2 class="section-title" id="contact-title">Want to work with <em>this team?</em></h2>
+          <p class="contact-lede">Tell us about your project and the people on this page will take it from there.</p>
+          <div class="contact-ctas">
+            <!-- TODO: replace this mailto with the main site's contact page URL once confirmed (also used by every "Start a project" button, which scrolls here) -->
+            <a class="btn btn-light" href="mailto:support@ecomdesignshub.com" data-magnetic>
+              Start a project
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+            </a>
+            <!-- TODO: add the WhatsApp number, then uncomment:
+            <a class="btn btn-ghost" href="https://wa.me/NUMBER" target="_blank" rel="noopener">Chat on WhatsApp</a>
+            -->
+            <a class="btn btn-ghost" href="https://ecomdesignshub.com/" target="_blank" rel="noopener">Visit ecomdesignshub.com</a>
+          </div>
         </div>
       </div>
     </section>
@@ -301,7 +563,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="container">
-      <a class="footer-word" href="#top" aria-label="Back to top">Ecom Designs Hub</a>
+      <a class="footer-word" href="#top" aria-label="Ecom Designs Hub, back to top">Ecom Designs Hub</a>
       <div class="footer-row">
         <span>Part of <a href="https://ecomdesignshub.com/">Ecom Designs Hub</a> · Web Development, UI/UX &amp; SEO Agency</span>
         <span>© <span id="year">2026</span> Ecom Designs Hub</span>
@@ -312,6 +574,14 @@
       </div>
     </div>
   </footer>
+
+  <!-- Sticky call to action (phones only, after the hero; hides over the contact section) -->
+  <div class="mobile-cta" id="mobileCta">
+    <a class="btn btn-light" href="#contact">Start a project</a>
+    <button type="button" class="mobile-cta-close" id="mobileCtaClose" aria-label="Hide this bar">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+    </button>
+  </div>
 
   <!-- Profile drawer -->
   <div class="drawer" id="drawer" aria-hidden="true">
@@ -324,6 +594,7 @@
     </aside>
   </div>
 
+  <script src="team.js" defer></script>
   <script src="script.js" defer></script>
 </body>
 </html>
