@@ -122,18 +122,19 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
 
 /* ---------- Background shapes ---------- */
 .bg-shapes { position: fixed; inset: 0; z-index: 0; pointer-events: none; overflow: hidden; }
-.shape { position: absolute; will-change: transform; }
-.shape span { display: block; width: 100%; height: 100%; animation: float 10s ease-in-out infinite alternate; }
+/* static on purpose: no float, spin or parallax, so the fixed layer never repaints while scrolling */
+.shape { position: absolute; }
+.shape span { display: block; width: 100%; height: 100%; }
 .s1 { top: 6%; right: -6%; width: clamp(240px, 34vw, 500px); aspect-ratio: 1; }
 .s1 span { border-radius: 50%; background: var(--accent); opacity: .62; }
 .s2 { top: 52%; left: -8%; width: clamp(200px, 26vw, 380px); aspect-ratio: 1; }
-.s2 span { border-radius: 50%; background: var(--orange); opacity: .5; animation-duration: 13s; animation-direction: alternate-reverse; }
+.s2 span { border-radius: 50%; background: var(--orange); opacity: .5; }
 .s3 { top: 30%; left: 38%; width: clamp(120px, 14vw, 220px); aspect-ratio: 1; }
-.s3 span { border-radius: 28%; background: var(--teal); opacity: .48; transform: rotate(18deg); animation-name: floatRot; animation-duration: 15s; }
+.s3 span { border-radius: 28%; background: var(--teal); opacity: .48; transform: rotate(18deg); }
 .s4 { bottom: -6%; right: 18%; width: clamp(160px, 20vw, 300px); aspect-ratio: 1; }
-.s4 span { border-radius: 50%; background: var(--pink); opacity: .42; animation-duration: 11s; }
+.s4 span { border-radius: 50%; background: var(--pink); opacity: .42; }
 .s5 { top: 14%; left: 8%; width: clamp(90px, 10vw, 150px); aspect-ratio: 1; }
-.s5 span { border-radius: 50%; border: 1.5px dashed rgba(255, 255, 255, .3); animation: spin 30s linear infinite; }
+.s5 span { border-radius: 50%; border: 1.5px dashed rgba(255, 255, 255, .3); }
 
 /* ---------- Buttons ---------- */
 .btn {
@@ -258,20 +259,20 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
 .stat span { display: block; margin-top: 6px; font-size: 13px; color: var(--muted); }
 
 .hero-visual { position: relative; display: flex; justify-content: center; padding: 40px 0 56px; }
-.ring-text { position: absolute; top: -10px; left: 0; width: clamp(110px, 12vw, 150px); height: auto; z-index: 2; animation: spin 22s linear infinite; mix-blend-mode: difference; }
+.ring-text { position: absolute; top: -10px; left: 0; width: clamp(110px, 12vw, 150px); height: auto; z-index: 2; animation: spin 40s linear infinite; mix-blend-mode: difference; }
 /* difference blend: white text turns black wherever it passes over the white photo */
 .ring-text text { fill: #fff; font-family: var(--font-body); font-size: 12.5px; font-weight: 600; letter-spacing: 3px; }
-.tilt-wrap { width: min(440px, 100%); transform-style: preserve-3d; transition: transform .6s var(--ease); will-change: transform; }
-.portrait-card { position: relative; display: block; width: 100%; padding: 14px; border-radius: 34px; transform-style: preserve-3d; }
+.tilt-wrap { width: min(440px, 100%); }
+.portrait-card { position: relative; display: block; width: 100%; padding: 14px; border-radius: 34px; }
 /* `backwards` fill: the reveal plays once, then hover transforms take over */
 .portrait-img { display: block; aspect-ratio: 4 / 5; border-radius: 24px; overflow: hidden; background: #fff; animation: portraitIn 1.2s var(--ease-io) .15s backwards; }
 .portrait-img img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 20%; filter: grayscale(.6); transition: transform 1.4s var(--ease), filter .7s; animation: portraitZoom 1.4s var(--ease) .15s backwards; }
 .portrait-card:hover .portrait-img img { transform: scale(1.06); filter: none; transition-delay: 0s; }
-.float-chip { position: absolute; display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 18px; text-align: left; transform: translateZ(50px); animation: bob 6s ease-in-out infinite; }
+.float-chip { position: absolute; display: flex; align-items: center; gap: 10px; padding: 12px 16px; border-radius: 18px; text-align: left; }
 .float-chip strong { display: block; font-family: var(--font-display); font-weight: 700; font-size: 18px; line-height: 1.1; letter-spacing: -.02em; }
 .float-chip small { display: block; margin-top: 4px; font-size: 11px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--accent-light); }
 .chip-name { left: -34px; bottom: 70px; flex-direction: column; align-items: flex-start; gap: 0; min-width: 230px; }
-.chip-since { right: 26px; bottom: -6px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; animation-delay: -4s; }
+.chip-since { right: 26px; bottom: -6px; border-radius: 999px; font-size: 12px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; }
 /* small round avatars: zoom in on the face */
 .node .av img, .d-person .av img { transform: scale(1.5); transform-origin: 50% 34%; }
 .av img.cutout { transform: scale(2.4); transform-origin: 50% 9%; }
@@ -281,28 +282,30 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
 .scroll-cue i::after { content: ""; position: absolute; inset: 0; background: #fff; animation: drip 2s var(--ease-io) infinite; }
 
 /* ---------- Marquee ---------- */
-.marquee { position: relative; display: grid; gap: 14px; padding: 30px 0; border-block: 1px solid rgba(255, 255, 255, .08); background: linear-gradient(90deg, rgba(108, 92, 255, .06), rgba(8, 9, 13, .6) 30%, rgba(8, 9, 13, .6) 70%, rgba(34, 199, 169, .06)); -webkit-backdrop-filter: blur(14px); backdrop-filter: blur(14px); overflow: hidden; }
-.marquee::before { content: ""; position: absolute; inset: 50% 0 auto; height: 1px; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .08) 20%, rgba(255, 255, 255, .08) 80%, transparent); }
-.mq-row { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-.mq-track { display: flex; width: max-content; font-family: var(--font-display); font-weight: 600; font-size: clamp(20px, 2.6vw, 34px); line-height: 1.1; letter-spacing: -.03em; white-space: nowrap; will-change: transform; }
-.mq-group { display: flex; flex: none; align-items: center; gap: 36px; padding-right: 36px; }
-.mq-track .mq-item { color: var(--muted-2); transition: color .35s, -webkit-text-stroke-color .35s, opacity .35s; }
-.mq-track .mq-star { font-size: .55em; display: inline-block; animation: spin 8s linear infinite; }
+/* editorial ticker: solid band, plain type, CSS-only loop (runs on the compositor, no JS per frame) */
+.marquee { position: relative; display: grid; gap: clamp(14px, 2vw, 22px); padding: clamp(22px, 3vw, 34px) 0; border-block: 1px solid rgba(255, 255, 255, .08); background: #0b0c11; overflow: hidden; contain: paint; }
+.mq-row { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent); }
+.mq-track { display: flex; width: max-content; white-space: nowrap; animation: mq var(--mq-dur, 60s) linear infinite; }
+.mq-row.reverse .mq-track { animation-direction: reverse; --mq-dur: 75s; }
+.marquee:hover .mq-track { animation-play-state: paused; }
+.mq-group { display: flex; flex: none; align-items: center; gap: clamp(22px, 3vw, 40px); padding-right: clamp(22px, 3vw, 40px); }
+@keyframes mq { to { transform: translate3d(-50%, 0, 0); } }
 
-/* names row: avatar + name + role pill, opens the profile */
-.mq-person { display: inline-flex; align-items: center; gap: 14px; padding: 6px 20px 6px 6px; border-radius: 999px; border: 1px solid rgba(255, 255, 255, .08); background: rgba(255, 255, 255, .03); cursor: pointer; transition: background-color .35s, border-color .35s, color .35s, transform .35s var(--ease); }
-.mq-person .av { width: 1.55em; height: 1.55em; flex: none; border-radius: 50%; overflow: hidden; display: grid; place-items: center; font-size: .42em; font-weight: 700; color: #fff; filter: grayscale(.8); transition: filter .35s; }
+/* names row */
+.mq-person { display: inline-flex; align-items: center; gap: 12px; cursor: pointer; font-family: var(--font-display); font-weight: 600; font-size: clamp(18px, 2vw, 26px); letter-spacing: -.02em; color: var(--text); }
+.mq-person .av { width: 1.7em; height: 1.7em; flex: none; border-radius: 50%; overflow: hidden; background: #1a1c24; }
 .mq-person .av img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 18%; }
-.mq-name { display: inline-flex; flex-direction: column; }
-.mq-name small { font-family: var(--font-body); font-size: .34em; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--faint); margin-top: 2px; }
-.mq-name b { font-weight: inherit; background: linear-gradient(90deg, var(--accent-light), var(--teal-light)) no-repeat; background-size: 0% 100%; -webkit-background-clip: text; background-clip: text; transition: background-size .6s var(--ease), color .35s; }
-.mq-person:hover { border-color: rgba(195, 187, 255, .3); }
-.mq-person:hover .mq-name b { background-size: 100% 100%; color: transparent; }
-.mq-person:hover .av { filter: none; }
+.mq-name { display: inline-flex; align-items: baseline; gap: 10px; }
+.mq-name b { font-weight: inherit; transition: color .3s; }
+.mq-name small { font-family: var(--font-body); font-size: 12px; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--faint); }
+.mq-person:hover .mq-name b { color: var(--accent-light); }
+.mq-sep { width: 22px; height: 1px; flex: none; background: rgba(255, 255, 255, .22); }
 
-/* values row: outlined text that fills with a gradient on hover */
-.mq-track.outline .mq-item { color: transparent; -webkit-text-stroke: 1.2px rgba(255, 255, 255, .4); background: linear-gradient(90deg, var(--accent-light), var(--teal-light)); -webkit-background-clip: text; background-clip: text; background-size: 0% 100%; background-repeat: no-repeat; transition: background-size .6s var(--ease), -webkit-text-stroke-color .35s; }
-.mq-track.outline .mq-item:hover { background-size: 100% 100%; -webkit-text-stroke-color: transparent; }
+/* values row */
+.mq-values { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 4.4vw, 60px); line-height: 1.05; letter-spacing: -.04em; }
+.mq-values .mq-item { color: rgba(255, 255, 255, .16); }
+.mq-values .mq-serif { font-family: var(--font-serif); font-style: italic; font-weight: 400; letter-spacing: -.01em; color: var(--muted-2); }
+.mq-dot { width: 8px; height: 8px; flex: none; border-radius: 50%; background: var(--accent); opacity: .8; }
 
 /* ---------- Sections ---------- */
 .section { position: relative; padding: var(--section-y) 0; }
@@ -539,10 +542,7 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
 
 /* ---------- Keyframes ---------- */
 @keyframes pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(.8); } }
-@keyframes float { from { transform: translate(0, 0); } to { transform: translate(34px, -44px); } }
-@keyframes floatRot { from { transform: translate(0, 0) rotate(18deg); } to { transform: translate(-30px, 36px) rotate(48deg); } }
 @keyframes spin { to { transform: rotate(360deg); } }
-@keyframes bob { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 @keyframes drip { 0% { transform: translateY(-100%); } 60%, 100% { transform: translateY(100%); } }
 @keyframes heroIn { from { opacity: 0; transform: translateY(34px); } }
 @keyframes heroRise { from { transform: translateY(24px); } }
@@ -623,7 +623,13 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
 @media (max-width: 600px) {
   :root { --gutter: 16px; --section-y: 64px; --r-xl: 28px; --r-lg: 24px; --r-md: 18px; }
   /* lighter blur on phones: cheaper to repaint while scrolling, looks the same at this size */
-  .glass { -webkit-backdrop-filter: blur(16px) saturate(150%); backdrop-filter: blur(16px) saturate(150%); }
+  /* no live blur on phones: backdrop-filter over a fixed background is what made scrolling stutter.
+     slightly more opaque fills keep the same look */
+  .glass, .glass-dark, .btn-ghost, .node, .badge-float, .footer { -webkit-backdrop-filter: none; backdrop-filter: none; }
+  .glass { background: rgba(22, 24, 33, .82); }
+  .glass-dark, .node { background: rgba(14, 16, 23, .9); }
+  .footer { background: #0b0c11; }
+  .shape span { opacity: .35; }
   /* body copy at 16px on phones */
   .ceo-bio, .fbody p, .tbody p, .principle p, .section-lede, .d-section p, .meta span { font-size: 16px; line-height: 1.6; }
   /* keeps the one-line exec name inside the card on narrow phones */
@@ -679,9 +685,6 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
   /* no hover on touch, so the quote pop-up would sit over the face for good — hide it */
   .slide-up { display: none; }
   .avatar img, .portrait-img img { filter: none; }
-  /* background shapes hold still (scroll parallax still moves them): a looping animation under
-     every blurred glass panel keeps the GPU busy even when the page is idle */
-  .shape span { animation: none; }
 }
 
 /* ==========================================================================
@@ -692,5 +695,5 @@ body.has-cursor .cursor-ring.is-label { opacity: 1; width: 80px; height: 80px; m
   [data-reveal], [data-hero], .wi, .tree li, .dz { opacity: 1 !important; transform: none !important; }
   .portrait-img, .ceo .avatar { clip-path: none !important; }
   .portrait-img img { transform: none !important; }
-  .shape, .mq-track { transform: none !important; }
+  .mq-track { animation: none !important; }
 }

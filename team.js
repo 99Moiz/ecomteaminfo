@@ -15,7 +15,7 @@
     'muhammad-farooq': { w: 800, h: 968 },
     'muhammad-moiz': { w: 800, h: 1067 },
     'muhammad-tasneem': { w: 800, h: 1067 },
-    'zainab-siddiqui': { w: 512, h: 575 }
+    'zainab-siddiqui': { w: 375, h: 350 }
   };
 
   // linkedin: '' hides the link. TODO: add each person's LinkedIn profile URL.
@@ -235,11 +235,12 @@
 
   /* ---------- marquee ---------- */
   function marquee() {
-    const stars = ['#6C5CFF', '#FF7A3D', '#22C7A9', '#E2487F'];
-    const star = (i) => `<span class="mq-star" style="color:${stars[i % stars.length]}">✦</span>`;
-    const names = Object.entries(LEADERS).map(([id, p], i) => `
-      <span class="mq-item mq-person" data-open="${id}">${smallFace(p)}<span class="mq-name"><b>${p.name}</b><small>${p.short}</small></span></span>${star(i)}`).join('');
-    const values = VALUES.map((t, i) => `<span class="mq-item">${t}</span>${star(i + 1)}`).join('');
+    // quiet separators: a short rule between people, a small dot between values
+    const sep = '<span class="mq-sep"></span>';
+    const names = Object.entries(LEADERS).map(([id, p]) => `
+      <span class="mq-item mq-person" data-open="${id}">${smallFace(p)}<span class="mq-name"><b>${p.name}</b><small>${p.short}</small></span></span>${sep}`).join('');
+    // values alternate sans and serif italic, like an editorial pull line
+    const values = VALUES.map((t, i) => `<span class="mq-item${i % 2 ? ' mq-serif' : ''}">${t}</span><span class="mq-dot"></span>`).join('');
     // two identical groups so the loop can wrap seamlessly at one group's width;
     // each group repeats its items so one group is always wider than the screen
     const group = (html) => `<div class="mq-group">${html}</div><div class="mq-group">${html}</div>`;

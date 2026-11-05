@@ -28,51 +28,6 @@ function featureExec(id) {
   $('#ceoFeature').scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth', block: 'start' });
 }
 
-/* ---------- marquee motion: drifts on its own, speeds up and follows scroll direction ---------- */
-function initMarquee() {
-  if (reduceMotion) return;
-  const rows = [
-    { el: $('#mqNames'), speed: 55, x: 0, w: 0 },
-    { el: $('#mqValues'), speed: -45, x: 0, w: 0 }
-  ];
-  // group widths are measured once (and on resize), not every frame, to avoid forced layouts
-  const measure = () => rows.forEach((r) => { r.w = r.el.firstElementChild.offsetWidth; });
-  measure();
-  window.addEventListener('resize', measure);
-  if (document.fonts) document.fonts.ready.then(measure);
-  const band = $('.marquee');
-  let dir = 1, boost = 0, hover = 1, hoverTarget = 1, prevY = window.scrollY, last = performance.now();
-  let visible = false;
-  // only animate while the band is on screen
-  new IntersectionObserver(([e]) => { visible = e.isIntersecting; }).observe(band);
-  band.addEventListener('pointerenter', () => { hoverTarget = 0.18; });
-  band.addEventListener('pointerleave', () => { hoverTarget = 1; });
-  window.addEventListener('scroll', () => {
-    const dy = window.scrollY - prevY;
-    prevY = window.scrollY;
-    if (dy) dir = dy > 0 ? 1 : -1;
-    boost = Math.min(boost + Math.abs(dy) * 0.06, 9);
-  }, { passive: true });
-
-  const frame = (now) => {
-    const dt = Math.min((now - last) / 1000, 0.05);
-    last = now;
-    if (visible) {
-      boost *= 0.92;
-      hover += (hoverTarget - hover) * 0.08;
-      rows.forEach((r) => {
-        const { w } = r;
-        if (!w) return;
-        r.x -= r.speed * dir * (1 + boost) * hover * dt;
-        r.x = ((r.x % w) - w) % w; // keep within (-w, 0]
-        r.el.style.transform = `translate3d(${r.x}px,0,0) skewX(${(-dir * boost * 0.6 * Math.sign(r.speed)).toFixed(2)}deg)`;
-      });
-    }
-    requestAnimationFrame(frame);
-  };
-  requestAnimationFrame(frame);
-}
-
 /* ---------- split text ---------- */
 function splitText(el) {
   let i = 0;
@@ -153,21 +108,11 @@ function initActiveNav() {
   $$('main section[id]').forEach((s) => io.observe(s));
 }
 
-/* ---------- scroll: progress, header, parallax ---------- */
+/* ---------- scroll: progress, header ---------- */
 const header = $('#header');
 const progress = $('.progress');
-const shapes = $$('.shape').map((el) => ({ el, speed: Number(el.dataset.speed), depth: Number(el.dataset.depth) }));
-const mouse = { x: 0, y: 0, tx: 0, ty: 0 };
 let lastY = window.scrollY;
 let menuOpen = false;
-
-function updateShapes() {
-  if (reduceMotion) return;
-  const y = window.scrollY;
-  shapes.forEach(({ el, speed, depth }) => {
-    el.style.transform = `translate3d(${mouse.x * depth}px, ${y * speed + mouse.y * depth}px, 0)`;
-  });
-}
 
 let scrollTicking = false;
 function onScroll() {
@@ -183,12 +128,11 @@ function onScroll() {
       else if (y < lastY - 4) header.classList.remove('is-hidden');
     }
     lastY = y;
-    if (!finePointer) updateShapes();
     scrollTicking = false;
   });
 }
 
-/* ---------- cursor + mouse parallax (fine pointers) ---------- */
+/* ---------- cursor ring (fine pointers) ---------- */
 function initPointerFx() {
   if (!finePointer || reduceMotion) return;
   document.body.classList.add('has-cursor');
@@ -196,12 +140,13 @@ function initPointerFx() {
   const label = $('.cursor-label');
   const pos = { x: innerWidth / 2, y: innerHeight / 2 };
   const ringPos = { ...pos };
+  let running = false;
+  const wake = () => { if (!running) { running = true; requestAnimationFrame(loop); } };
 
   window.addEventListener('mousemove', (e) => {
     pos.x = e.clientX;
     pos.y = e.clientY;
-    mouse.tx = (e.clientX / innerWidth - 0.5) * 2;
-    mouse.ty = (e.clientY / innerHeight - 0.5) * 2;
+    wake();
   }, { passive: true });
 
   // ring shows only over interactive elements; cards with data-cursor get a text label
@@ -220,16 +165,14 @@ function initPointerFx() {
   });
   document.addEventListener('mouseleave', () => ring.classList.remove('is-hover', 'is-label'));
 
+  // the loop only runs while the ring is catching up, then sleeps until the mouse moves again
   const loop = () => {
     ringPos.x += (pos.x - ringPos.x) * 0.18;
     ringPos.y += (pos.y - ringPos.y) * 0.18;
     ring.style.transform = `translate3d(${ringPos.x}px, ${ringPos.y}px, 0)`;
-    mouse.x += (mouse.tx - mouse.x) * 0.06;
-    mouse.y += (mouse.ty - mouse.y) * 0.06;
-    updateShapes();
-    requestAnimationFrame(loop);
+    if (Math.abs(pos.x - ringPos.x) + Math.abs(pos.y - ringPos.y) > 0.3) requestAnimationFrame(loop);
+    else running = false;
   };
-  requestAnimationFrame(loop);
 
   // magnetic elements
   $$('[data-magnetic]').forEach((el) => {
@@ -242,16 +185,6 @@ function initPointerFx() {
     el.addEventListener('mouseleave', () => { el.style.transform = ''; });
   });
 
-  // 3D tilt
-  $$('[data-tilt]').forEach((el) => {
-    el.addEventListener('mousemove', (e) => {
-      const r = el.getBoundingClientRect();
-      const x = (e.clientX - r.left) / r.width - 0.5;
-      const y = (e.clientY - r.top) / r.height - 0.5;
-      el.style.transform = `perspective(1100px) rotateX(${(-y * 10).toFixed(2)}deg) rotateY(${(x * 12).toFixed(2)}deg)`;
-    });
-    el.addEventListener('mouseleave', () => { el.style.transform = ''; });
-  });
 }
 
 /* ---------- team filter: shows/hides the cards already in the page ---------- */
@@ -456,7 +389,6 @@ window.addEventListener('hashchange', () => { const id = profileFromHash(); if (
 
 initTabs();
 initPointerFx();
-initMarquee();
 initMobileCta();
 
 document.documentElement.classList.add('ready');
